@@ -11,11 +11,12 @@ const Show = () => {
           text-xl 
           md:text-2xl 
           text-center
+          pb-4
           "
       >
         <Font>Projetos</Font>
       </h3>
-      <div className="w-[500px] max-w-full h-full">
+      <div className="w-[500px] max-w-full h-full pb-4">
         <div
           className="
             mx-auto 

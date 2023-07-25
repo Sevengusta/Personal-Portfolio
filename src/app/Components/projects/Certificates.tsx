@@ -3,7 +3,8 @@ import {useEffect, useRef, useState } from "react";
 import { Modal } from "./Modal";
 import { Font } from "../comuns/Font";
 import { PhotoItem } from "./PhotoItem";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
+
 
 const Certificates = () => {
   const [showModal, setShowModal] = useState(false);
@@ -15,6 +16,7 @@ const Certificates = () => {
       setWidth(carousel.current.scrollWidth - carousel.current?.offsetWidth);
     }
   }, []);
+  
 
   const openModal = (id: number) => {
     const photo = photos.find((item) => item.id === id);

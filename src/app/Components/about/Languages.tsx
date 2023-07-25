@@ -1,8 +1,32 @@
 import React from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
-const Languages = () => {
+export const Languages = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+  });
+  const animationLeft = useAnimation();
+  useEffect(() => {
+    if (inView) {
+      animationLeft.start({
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 1,
+          bounce: 0.5,
+        },
+      });
+    }
+    if (!inView) {
+      animationLeft.start({ x: "-100vw" });
+    }
+  }, [inView, animationLeft ]);
   return (
-    <div className="flex gap-4 justify-around mt-2">
+    <div ref={ref} >
+      <motion.div className="flex gap-4 justify-around mt-2" animate={animationLeft}>
+
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="80"
@@ -34,8 +58,10 @@ const Languages = () => {
           <path d="M14.001 14a.5.5 0 0 1-.496-.57l.359-2.518a.36.36 0 0 0-.356-.412H11.75a.5.5 0 0 1 0-1h1.758a1.36 1.36 0 0 1 1.346 1.554l-.359 2.517a.5.5 0 0 1-.494.429z"></path>
         </g>
       </svg>
+      </motion.div>
     </div>
   );
 };
 
-export default Languages;
+
+export default Languages
