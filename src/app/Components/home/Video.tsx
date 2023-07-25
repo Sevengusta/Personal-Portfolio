@@ -39,7 +39,7 @@ return (
               md:py-4
             "
           >
-            <Font> Conheça meus projetos</Font>
+            <Font>Conheça o Gustavo</Font>
           </h3>
 
           <div

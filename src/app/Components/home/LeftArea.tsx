@@ -1,10 +1,10 @@
 import React from "react";
 import { Font } from "../comuns/Font";
 import Button from "../comuns/Button";
+import TextAnimation from "./TextAnimation";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import TextAnimation from "./TextAnimation";
 
 
 

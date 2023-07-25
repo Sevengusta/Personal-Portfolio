@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 
 
 export const Header = () => {
-  const { ref, inView } = useInView({threshold: 0.2,});
+  const { ref, inView } = useInView();
   const mainControls = useAnimation();
   useEffect(() => {
       inView ? mainControls.start ("visible") : mainControls.start( "hidden" )
