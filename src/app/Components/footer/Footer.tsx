@@ -1,17 +1,29 @@
 import { Font } from "../comuns/Font";
-import {useRef, useEffect } from 'react'
-import { motion, useAnimation, useInView } from "framer-motion";
-
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export const Footer = () => {
-  
+  const { ref, inView } = useInView();
+  const mainControls = useAnimation();
+  useEffect(() => {
+    inView ? mainControls.start("visible") : mainControls.start("hidden");
+  }, [inView, mainControls]);
+
   return (
-    <>
-      <div className="container  bg-gray-600 h-[50px]">
-        <div className="text-[12px] mx-auto sm:text-lg lg:text-xl">
+    <div className="container bg-gray-600 h-[50px]" ref={ref}>
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, y: 75 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate={mainControls}
+        transition={{ duration: 0.5, delay: 0.25 }}
+        className="text-[12px] text-center sm:text-lg lg:text-xl"
+      >
           <Font>Desenvolvido por um programador FullStack</Font>
-        </div>
-      </div>
-    </>
+      </motion.div>
+    </div>
   );
 };

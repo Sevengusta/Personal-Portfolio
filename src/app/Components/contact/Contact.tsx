@@ -14,9 +14,11 @@ const Contact = () => {
   return (
     <div
       ref={ref}
+      id="contact"
     
     >
       <motion.div
+      
       className="
       container
       bg-gray-800

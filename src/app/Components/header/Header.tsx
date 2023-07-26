@@ -32,16 +32,16 @@ export const Header = () => {
         <div className="w-2/3">
           <nav className=" hidden md:flex">
             <ul className="nav flex-1 text-2xl ">
-              <NavName>
+              <NavName refs={"#home"} >
                 <Font>Início</Font>
               </NavName>
-              <NavName>
+              <NavName refs={"#about"}>
                 <Font>Sobre mim</Font>
               </NavName>
-              <NavName>
+              <NavName refs={"#projects"}>
                 <Font>Projetos</Font>
               </NavName>
-              <NavName>
+              <NavName refs={"#contact"}>
                 <Font>Contatos</Font>
               </NavName>
             </ul>

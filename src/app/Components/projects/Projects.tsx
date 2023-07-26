@@ -15,6 +15,7 @@ export const Projects = () => {
     <div ref={ref}
     >
       <motion.div
+        id="projects"
         className="
         container
         bg-gray-600

@@ -17,7 +17,9 @@ export const Home = () => {
   return (
       <div ref={ref} >
         <motion.div 
+          id="home"
           className="
+          home
           container
           bg-gray-600
           flex 

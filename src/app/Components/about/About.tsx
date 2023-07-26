@@ -13,7 +13,7 @@ export const About = () => {
     inView ? mainControls.start("visible") :  mainControls.start( "hidden" )
   }, [inView, mainControls]);
   return (
-    <div ref={ref}>
+    <div ref={ref} id="about">
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },
@@ -73,8 +73,8 @@ export const About = () => {
               py-2
             "
             >
-              Atualmente, utilizo o MySQL e o MongoDB para manipulação de dados
-              dos meus projetos bem como utiizo o Insônia para realização de
+              Atualmente, utilizo o MySQL e o MongoDB para a manipulação de dados
+              , bem como utliizo o Insônia para realização de
               testes em APIs.
             </p>
           </div>
@@ -97,7 +97,6 @@ export const About = () => {
             "
             >
               <h3 className="text-xl py-2 md:text-2xl md:pb-8">
-                <Font>Linguagens</Font>
                 <Languages />
               </h3>
             </div>
@@ -112,7 +111,7 @@ export const About = () => {
             "
             >
               <h3 className="text-xl py-2 md:text-2xl md:pb-8">
-                <Font>Frameworks</Font>
+                
                 <Frameworks />
               </h3>
             </div>

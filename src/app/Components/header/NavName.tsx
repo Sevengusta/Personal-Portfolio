@@ -3,13 +3,14 @@ import React from "react";
 
 interface NavProps {
   children: React.ReactNode;
+  refs: string
 }
 
-const NavName: React.FC<NavProps> = ({ children }) => {
+const NavName: React.FC<NavProps> = ({ children, refs }) => {
   return (
     <div className="group">
       <li>
-        <a href="">{children}</a>
+        <a href={refs}>{children}</a>
         <div
           className=" 
               w-0

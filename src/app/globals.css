@@ -54,6 +54,12 @@
 img {
     max-width: 100vw;
 }
+.colored{
+    background-color: red;
+}
+
+
+
 @media (max-width:1200px){
     .inner-carousel {
         flex-direction: column;

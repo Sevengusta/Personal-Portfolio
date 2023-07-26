@@ -2,20 +2,14 @@ import React from "react";
 import { Font } from "../comuns/Font";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import {useRef, useEffect } from 'react'
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 
 const Academy = () => {
-
-
-
-
-
-
   const { ref, inView } = useInView({
     threshold: 0.6,
   });
-  
+
   const animationLeft = useAnimation();
   const animationRight = useAnimation();
   useEffect(() => {
@@ -43,7 +37,7 @@ const Academy = () => {
     }
   }, [inView, animationLeft, animationRight]);
   return (
-    <div className="flex flex-col sm:flex-row justify-around w-full" >
+    <div className="flex flex-col sm:flex-row justify-around w-full">
       <h3
         ref={ref}
         className="
@@ -53,8 +47,8 @@ const Academy = () => {
           md:text-2xl
         "
       >
-        <Font>Ciências Contábeis</Font>
-        <motion.div  animate={animationLeft}>
+        <motion.div animate={animationLeft}>
+          <Font>Ciências Contábeis</Font>
           <Image
             alt="UFRJ"
             src={"/images/UFRJ.png"}
@@ -62,8 +56,8 @@ const Academy = () => {
             height={150}
             className="m-auto w-1/2 sm:w-full"
           />
+          <Font>08/2019 - 12/2022</Font>
         </motion.div>
-        <Font>08/2019 - 12/2022</Font>
       </h3>
       <h3
         ref={ref}
@@ -74,8 +68,8 @@ const Academy = () => {
           md:text-2xl
         "
       >
-        <Font>Computação</Font>
         <motion.div animate={animationRight}>
+          <Font>Computação</Font>
           <Image
             className="m-auto py-[10px] w-1/4 sm:w-1/2 "
             alt="UFF"
@@ -83,8 +77,8 @@ const Academy = () => {
             width={130}
             height={127}
           />
+          <Font>08/2023 - 12/2026</Font>
         </motion.div>
-        <Font>08/2023 - 12/2026</Font>
       </h3>
     </div>
   );
