@@ -44,7 +44,6 @@ const Certificates = () => {
         ref={carousel}
         className="carousel"
       >
-        {/* área do overflow */}
         <motion.div
           drag={"x"}
           dragConstraints={{ right: 0, left: -width }}

@@ -21,7 +21,6 @@ export const Home = () => {
           className="
           home
           container
-          bg-gray-600
           flex 
           flex-col
           xl:grid

@@ -27,7 +27,7 @@ const Suport = () => {
     }
   }, [inView, animationRight]);
   return (
-    <div className="col-span-2  ">
+    <div className="col-span-2  flex flex-col items-center  ">
       <linearGradient id="color" x1="100%" y1="100%" x2="0%" y2="0%">
         <stop stopColor="#ef4444" offset="0%" />
         <stop stopColor="#f97316" offset="100%" />

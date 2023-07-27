@@ -11,7 +11,7 @@ export const Footer = () => {
   }, [inView, mainControls]);
 
   return (
-    <div className="container bg-gray-600 h-[50px]" ref={ref}>
+    <div className="container h-[50px]" ref={ref}>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },

@@ -88,11 +88,11 @@ const Show = () => {
                     text-center 
                     hover:flex 
                     hover:flex-col 
-                    hover:-translate-y-10 
                     hover:ease-in-out 
-                    duration-300
-                    
+                    duration-500
+                    bg-black/80
                     absolute
+                    right-0
                     -bottom-32
                     group-hover:bottom-0
 
@@ -100,7 +100,7 @@ const Show = () => {
                 >
 
                   <Font> Calculadora contábil criada com arquitetura MVC através do Laravel</Font>
-                  <div className="gap-3 flex">
+                  <div className="gap-3 flex p-2 ">
                     <Link href={"https://github.com/Sevengusta/Laravel-PHP-calculadora-contabil"} >
                       <Button >Repositório</Button>
                     </Link>

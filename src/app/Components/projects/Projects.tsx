@@ -18,7 +18,6 @@ export const Projects = () => {
         id="projects"
         className="
         container
-        bg-gray-600
         flex 
         flex-col
         py-2

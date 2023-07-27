@@ -8,22 +8,22 @@ import Contact from "./Components/contact/Contact";
 const Page = () => {
   return (
     <>
-      <header >
-          <Header />
+      <header className="bg-gray-800" >
+        <Header />
       </header>
-      <section >
+      <section className="bg-gray-600" >
         <Home />
-      </section>
-      <section >
+      </section >
+      <section className="bg-gray-800"  >
         <About />
       </section>
-      <section >
+      <section className="bg-gray-600"  >
         <Projects />
       </section>
-      <section >
+      <section className="bg-gray-800"  >
         <Contact />
       </section>
-      <section >
+      <section className="bg-gray-600" >
         <Footer />
       </section>
     </>

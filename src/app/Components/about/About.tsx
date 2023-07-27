@@ -7,7 +7,9 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 export const About = () => {
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({
+    threshold: 0.2
+  });
   const mainControls = useAnimation();
   useEffect(() => {
     inView ? mainControls.start("visible") :  mainControls.start( "hidden" )
@@ -24,7 +26,6 @@ export const About = () => {
         transition={{ duration: 0.5, delay: 0.25 }}
         className="
           container
-          bg-gray-800
           flex 
           flex-col
         "

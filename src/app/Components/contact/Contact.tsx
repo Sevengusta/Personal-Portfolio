@@ -12,22 +12,17 @@ const Contact = () => {
     inView ? mainControls.start("visible") : mainControls.start("hidden");
   }, [mainControls, inView]);
   return (
-    <div
-      ref={ref}
-      id="contact"
-    
-    >
+    <div ref={ref} id="contact">
       <motion.div
-      
-      className="
-      container
-      bg-gray-800
-      flex 
-      flex-col
-      xl:grid
-      xl:grid-cols-3
-      xl:gap-5
-  "
+        className="
+          container
+          flex 
+          flex-col-reverse
+          xl:flex-col
+          xl:grid
+          xl:grid-cols-3
+          xl:gap-5
+        "
         variants={{
           hidden: { opacity: 0, y: 75 },
           visible: { opacity: 1, y: 0 },
@@ -39,7 +34,6 @@ const Contact = () => {
         <MoneyImage />
         <Suport />
       </motion.div>
-
     </div>
   );
 };
