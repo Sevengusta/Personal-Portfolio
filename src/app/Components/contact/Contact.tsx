@@ -1,5 +1,4 @@
 import React from "react";
-import MoneyImage from "./MoneyImage";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
@@ -19,9 +18,7 @@ const Contact = () => {
           flex 
           flex-col-reverse
           xl:flex-col
-          xl:grid
-          xl:grid-cols-3
-          xl:gap-5
+          xl:flex
         "
         variants={{
           hidden: { opacity: 0, y: 75 },
@@ -31,7 +28,6 @@ const Contact = () => {
         animate={mainControls}
         transition={{ duration: 0.5, delay: 0.25 }}
       >
-        <MoneyImage />
         <Suport />
       </motion.div>
     </div>

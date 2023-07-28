@@ -11,10 +11,12 @@ const Certificates = () => {
   const [imageOfModal, setImageOfModal] = useState("");
   const [width, setWidth] = useState<number>(0);
   const carousel = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (carousel.current) {
-      setWidth(carousel.current.scrollWidth - carousel.current?.offsetWidth);
+      setWidth(carousel.current.scrollWidth - carousel.current?.offsetWidth );
     }
+
   }, []);
   
 
@@ -33,8 +35,7 @@ const Certificates = () => {
     <div className="">
       <h3
         className="
-          text-xl 
-          md:text-2xl 
+          text-2xl 
           text-center
           "
       >
@@ -51,7 +52,7 @@ const Certificates = () => {
           className="inner-carousel"
         >
           {photos.map((item) => (
-            <motion.div key={item.id} className="item flex">
+            <motion.div key={item.id} className="item">
                 <PhotoItem photo={item} abrir={() => openModal(item.id)} />
             </motion.div>
           ))}

@@ -102,13 +102,6 @@ const MobileNav = () => {
           initial="closed"
           exit="closed"
           animate="open"
-            // animate={mainControls}
-            // variants={{
-            //   hidden: { opacity: 0, y: [0, 20, 20] },
-            //   visible: { opacity: 1, y: [0, 20, 20] },
-            // }}
-            // initial="hidden"
-            // transition={{ duration: 0.5, delay: 0.25 }}
           >
             <motion.div 
             variants={{

@@ -2,11 +2,14 @@ import React from "react";
 
 type Button = {
   children: string;
+  backForm?: () => void
 };
 
-const Button = ({ children }: Button) => {
+const Button = ({ children, backForm  }: Button) => {
   return (
     <button 
+        onClick={backForm}
+        type="submit"
         className="
             p-2 
             my-2 

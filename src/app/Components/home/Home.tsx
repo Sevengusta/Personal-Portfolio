@@ -20,12 +20,14 @@ export const Home = () => {
           id="home"
           className="
           home
+          xl:h-screen
           container
           flex 
           flex-col
           xl:grid
           xl:grid-cols-2
           xl:gap-5
+          place-items-center
         "
         variants={{
           hidden: { opacity: 0, y: 75 },

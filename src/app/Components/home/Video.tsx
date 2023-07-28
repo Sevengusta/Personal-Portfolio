@@ -29,7 +29,7 @@ export const Video = () => {
 
 return (
   <>
-      <div ref={ref} className="w-full h-full">
+      <div ref={ref} className="w-full">
         <motion.div animate={animationRight}>
           <h3
             className="

@@ -28,8 +28,8 @@ const MoneyImage = () => {
     <div ref={ref}>
       <motion.div animate={animationLeft}>
         <svg
-          width="300px"
-          height="300px"
+          width="250px"
+          height="250px"
           viewBox="0 0 1024 1024"
           className=" w-full "
           version="1.1"
