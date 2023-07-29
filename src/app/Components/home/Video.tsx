@@ -51,13 +51,19 @@ export const Video = () => {
         x: 0,
         transition: {
           type: "spring",
-          duration: 2,
-          bounce: 0.2,
+          duration: 1,
+          bounce: 0.1,
         },
       });
     }
     if (!inView) {
-      animationRight.start({ x: "100vw" });
+      animationRight.start({
+        transition: {
+          type: "spring",
+          duration: 1,
+          bounce: 0.2,
+        },
+      });
     }
   }, [inView, animationRight]);
 
@@ -193,10 +199,7 @@ export const Video = () => {
                     </defs>
                   </svg>
 
-                  <h1>
-                    Contador formado com experiência de trabalho no setor
-                    
-                  </h1>
+                  <h1>Contador formado com experiência de trabalho no setor</h1>
                 </motion.div>
               )}
               {screen2 && (
@@ -308,7 +311,8 @@ export const Video = () => {
                   </svg>
 
                   <h1>
-                    O curso em programação que utilizado para a estudar é o pacote FullStack da B7Web
+                    O curso em programação que utilizado para a estudar é o
+                    pacote FullStack da B7Web
                   </h1>
                 </motion.div>
               )}
