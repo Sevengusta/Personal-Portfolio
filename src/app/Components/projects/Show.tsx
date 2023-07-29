@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const Show = () => {
   const { ref, inView } = useInView({
@@ -31,32 +32,26 @@ const Show = () => {
       <div className="flex flex-col  gap-2  h-full">
         <h3
           className="
-          text-2xl 
+          text-3xl 
           text-center
           "
         >
           <Font>Projetos </Font>
         </h3>
-        <div className="flex flex-col xl:flex-row  w-full">
-          <motion.div animate={animationLeft}>
-            <div className=" h-full ">
+        <div className="flex flex-col   w-full">
+          <motion.div animate={animationLeft } >
+            <div className=" h-full  ">
               <div
                 className="
-                mx-auto 
                 flex  
                 items-center 
                 w-full
                 justify-center
                 group
-                px-[37px]
-                py-[20px]
               "
               >
                 <div
                   className="
-                  h-[350px]
-                  w-[500px] 
-                  show
                   rounded-md
                   bg-gradient-to-r
                   from-red-500
@@ -64,6 +59,8 @@ const Show = () => {
                   relative
                   overflow-hidden
                   p-1
+                  my-5
+                  m-1
                 "
                 >
                   <div
@@ -72,14 +69,12 @@ const Show = () => {
                     flex-col 
                     h-full 
                     justify-end 
-                    p-20
-                    bg-[url('/images/Calculadora.png')]
                     bg-cover
                     bg-center
-                    px-2
 
                   "
                   >
+                    <Image alt="Calculadora Contábil" src={'/images/Calculadora.png'} width={400} height={200} className="w-full h-full" />
                     <div
                       className=" 
                       p-4
@@ -90,8 +85,9 @@ const Show = () => {
                       bg-black/80
                       absolute
                       right-0
-                      -bottom-40
+                      -bottom-44
                       group-hover:bottom-0
+                      w-full
 
                     "
                     >
@@ -100,14 +96,12 @@ const Show = () => {
                         do Laravel
                       </Font>
                       <div className="gap-3 flex justify-center p-2 ">
-                        <Link
-                          href={
-                            "https://github.com/Sevengusta/Laravel-PHP-calculadora-contabil"
-                          }
-                        >
+                        <Link href={"https://github.com/Sevengusta/Laravel-PHP-calculadora-contabil"}>
                           <Button>Repositório</Button>
                         </Link>
-                        <Button>Vídeo</Button>
+                        <Link href={"https://www.linkedin.com/feed/update/urn:li:activity:7084325121124933632/"}>
+                          <Button>Vídeo</Button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -119,22 +113,15 @@ const Show = () => {
             <div className=" h-full ">
               <div
                 className="
-                mx-auto 
                 flex  
                 items-center 
                 w-full
                 justify-center
                 group
-                px-[37px]
-                py-[20px]
               "
               >
                 <div
                   className="
-                  h-[350px]
-                  w-[500px] 
-                  show
-                  
                   rounded-md
                   bg-gradient-to-r
                   from-red-500
@@ -142,6 +129,8 @@ const Show = () => {
                   relative
                   overflow-hidden
                   p-1
+                  my-5
+                  m-1
                 "
                 >
                   <div
@@ -150,14 +139,12 @@ const Show = () => {
                     flex-col 
                     h-full 
                     justify-end 
-                    p-20
-                    bg-[url('/images/nodejs.png')]
                     bg-cover
                     bg-center
-                    px-2
 
                   "
                   >
+                    <Image alt="Projeto Canil" src={'/images/nodejs.png'} width={400} height={200} className="w-full h-full" />
                     <div
                       className=" 
                       p-4
@@ -168,11 +155,12 @@ const Show = () => {
                       bg-black/80
                       absolute
                       right-0
-                      -bottom-40
+                      -bottom-44
                       group-hover:bottom-0
-
+                      w-full
                     "
                     >
+                      
                       <Font>
                         Projeto Elaborado para treinamento da arquitetura MVC
                         com Node.js

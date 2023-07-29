@@ -28,7 +28,7 @@ export const PhotoItem = ({ photo, abrir }: Props) => {
       })
     }
     if (!inView) {
-      animationRight.start({ x: "100vw" });
+      animationRight.start({ x: "300vw" });
     }
   }, [inView, animationRight]);
 

@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 import MoneyImage from "./MoneyImage";
 
 const Suport = () => {
-  const [isSubmitted, setSubmitted] = useState(!false)
+  const [isSubmitted, setSubmitted] = useState(false)
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -20,6 +20,7 @@ const Suport = () => {
       email: email,
       message: message,
     }
+
     try {
       const res = await fetch("/api/contact", {
 
@@ -29,7 +30,6 @@ const Suport = () => {
           "Content-Type": "application/json",
         },
       });
-
       if (!res.ok) {
         throw new Error("HTTP error! status:" + res.status );
       }
@@ -91,7 +91,7 @@ const Suport = () => {
           md:text-2xl
         "
       >
-        <Font>Deixe uma mensagem, responderei o mais rápido possível</Font>
+        <Font>Fale comigo, responderei o mais rápido possível</Font>
       </div>
       <form onSubmit={onSubmit} action="" className="flex flex-col gap-2 py-2">
         <div

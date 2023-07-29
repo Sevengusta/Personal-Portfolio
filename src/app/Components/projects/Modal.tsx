@@ -5,10 +5,6 @@ type Props = {
     image:string,
     fechar: () => void
   }
-  
-  
-  
-  
   export const Modal = ({ image, fechar }: Props) => {
     return (
       <>

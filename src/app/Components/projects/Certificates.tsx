@@ -35,7 +35,7 @@ const Certificates = () => {
     <div className="">
       <h3
         className="
-          text-2xl 
+          text-3xl 
           text-center
           "
       >

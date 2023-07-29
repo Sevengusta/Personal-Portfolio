@@ -30,7 +30,7 @@ export const Header = () => {
       >
         <div className="container h-[70px]">
           <div className="text-2xl">
-            <Font>Portifólio</Font>
+            <Font>Portfólio</Font>
           </div>
           <div className="w-2/3">
             <nav className=" hidden md:flex">

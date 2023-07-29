@@ -19,7 +19,6 @@ export const Home = () => {
         <motion.div 
           id="home"
           className="
-          home
           xl:h-screen
           container
           flex 
