@@ -20,9 +20,9 @@ export const Footer = () => {
         initial="hidden"
         animate={mainControls}
         transition={{ duration: 0.5, delay: 0.25 }}
-        className="text-[13px] text-center sm:text-lg lg:text-xl"
+        className="text-sm text-center sm:text-lg lg:text-xl"
       >
-          <Font>Desenvolvido por um programador FullStack</Font>
+          <Font>© Todos os direitos reservados</Font>
       </motion.div>
     </div>
   );

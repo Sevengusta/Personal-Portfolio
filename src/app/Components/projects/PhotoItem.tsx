@@ -22,13 +22,20 @@ export const PhotoItem = ({ photo, abrir }: Props) => {
         x: 0,
         transition: {
           type: "spring",
-          duration: 1,
-          bounce: 0.5,
+          duration: 2,
+          bounce: 0.2,
         },
       })
     }
     if (!inView) {
-      animationRight.start({ x: "300vw" });
+      animationRight.start({
+         x: "300vw",
+         transition: {
+          type: "spring",
+          duration: 0.2,
+          bounce: 0.2,
+        },
+         });
     }
   }, [inView, animationRight]);
 

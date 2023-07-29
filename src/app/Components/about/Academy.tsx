@@ -18,22 +18,34 @@ const Academy = () => {
         x: 0,
         transition: {
           type: "spring",
-          duration: 1,
-          bounce: 0.5,
+          duration: 2,
+          bounce: 0.2,
         },
       });
       animationRight.start({
         x: 0,
         transition: {
           type: "spring",
-          duration: 1,
-          bounce: 0.5,
+          duration: 2,
+          bounce: 0.2,
         },
       });
     }
     if (!inView) {
-      animationLeft.start({ x: "-100vw" });
-      animationRight.start({ x: "100vw" });
+      animationLeft.start({
+        x: "-100vw",
+        transition: {
+          type: "spring",
+          duration: 1,
+        },
+      });
+      animationRight.start({
+        x: "100vw",
+        transition: {
+          type: "spring",
+          duration: 1,
+        },
+      });
     }
   }, [inView, animationLeft, animationRight]);
   return (

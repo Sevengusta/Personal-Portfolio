@@ -9,7 +9,7 @@ import { motion, useAnimation } from "framer-motion";
 
 
 export const Home = () => {
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({threshold: 0.2});
   const mainControls = useAnimation();
   useEffect(() => {
     inView ? mainControls.start("visible") :  mainControls.start( "hidden" )

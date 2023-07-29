@@ -1,32 +1,9 @@
 import React from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
 
 const MoneyImage = () => {
-  const { ref, inView } = useInView({
-    threshold: 0.2,
-  });
-  const animationLeft = useAnimation();
-
-  useEffect(() => {
-    if (inView) {
-      animationLeft.start({
-        x: 0,
-        transition: {
-          type: "spring",
-          duration: 1,
-          bounce: 0.5,
-        },
-      });
-    }
-    if (!inView) {
-      animationLeft.start({ x: "-100vw" });
-    }
-  }, [inView, animationLeft]);
   return (
-    <div ref={ref}>
-      <motion.div animate={animationLeft}>
+    <div>
+      <div>
         <svg
           width="264px"
           height="264px"
@@ -96,7 +73,7 @@ const MoneyImage = () => {
             fill=""
           />
         </svg>
-      </motion.div>
+      </div>
     </div>
   );
 };
