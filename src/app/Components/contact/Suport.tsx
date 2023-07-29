@@ -1,4 +1,3 @@
-"use client";
 import React, { FormEvent } from "react";
 import { Font } from "../comuns/Font";
 import { useInView } from "react-intersection-observer";
@@ -12,14 +11,15 @@ const Suport = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  async function onSubmit(e: FormEvent<HTMLFormElement>)  {
+    
     e.preventDefault();
     const data = {
       name: name,
       email: email,
       message: message,
     };
-
+    console.log(data)
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -54,7 +54,7 @@ const Suport = () => {
           visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"
-        transition={{ duration: 0.5, delay: 0.25 }}
+        transition={{ duration: 1, delay: 0.25 }}
       >
         <div
           className="

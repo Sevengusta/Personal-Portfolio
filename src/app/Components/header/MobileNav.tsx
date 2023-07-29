@@ -70,6 +70,7 @@ const MobileNav = () => {
               flex 
               flex-col 
               w-full
+              md:w-1/3
               px-4
               shadow-md
               bg-gray-800
@@ -78,7 +79,6 @@ const MobileNav = () => {
               fixed 
               inset-0
               space-y-10
-              mx-auto
               justify-center
             "
           variants={{

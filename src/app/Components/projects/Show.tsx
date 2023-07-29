@@ -111,10 +111,10 @@ const Show = () => {
                           do Laravel
                         </Font>
                         <div className="gap-3 flex justify-center p-2 ">
-                          <Link href={"https://github.com/Sevengusta/Laravel-PHP-calculadora-contabil"}>
+                          <Link href={"https://github.com/Sevengusta/Laravel-PHP-calculadora-contabil"} target="_blank" >
                             <Button>Repositório</Button>
                           </Link>
-                          <Link href={"https://www.linkedin.com/feed/update/urn:li:activity:7084325121124933632/"}>
+                          <Link href={"https://www.linkedin.com/feed/update/urn:li:activity:7084325121124933632/"} target="_blank">
                             <Button>Vídeo</Button>
                           </Link>
                         </div>
@@ -185,7 +185,7 @@ const Show = () => {
                             com Node.js
                           </Font>
                           <div className="gap-3 flex justify-center p-2 ">
-                            <Link href={"https://github.com/Sevengusta/Nodejs-Canil"}>
+                            <Link href={"https://github.com/Sevengusta/Nodejs-Canil"} target="_blank">
                               <Button>Repositório</Button>
                             </Link>
                             <Link href={"https://stormy-lamb-bathing-suit.cyclic.app/"}>

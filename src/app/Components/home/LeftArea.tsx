@@ -5,16 +5,16 @@ import TextAnimation from "./TextAnimation";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 
 
 const LeftArea = () => {
 
-
-
   const { ref, inView } = useInView({
     threshold: 0.2,
   });
+
   const animationLeft = useAnimation();
 
   useEffect(() => {
@@ -55,9 +55,11 @@ const LeftArea = () => {
           enfoque na área de
           <Font> Finanças e Validação de dados. </Font>
         </p>
-        <Button>
-          Download CV
-        </Button>
+        <Link href={"https://sevengusta.github.io/Curriculum-Vitae/"} target="_blank">
+          <Button>
+            Ler CV
+          </Button>
+        </Link>
       </motion.div>
     </div>
   );
