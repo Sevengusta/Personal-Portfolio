@@ -20,9 +20,9 @@ const SlideCircle = ( {slideChange} : SlideCircle) => {
         <div 
             onClick={slideChange}
             className='
-            bg-gray-800 
-            hover:bg-white
+            hover:bg-gray-800 
             rounded-full
+            open:bg-white
             w-full
             h-full
             p-4

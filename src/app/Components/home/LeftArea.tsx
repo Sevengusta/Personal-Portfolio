@@ -57,7 +57,7 @@ const LeftArea = () => {
         </p>
         <Link href={"https://sevengusta.github.io/Curriculum-Vitae/"} target="_blank">
           <Button>
-            Ler CV
+            Ir para CV
           </Button>
         </Link>
       </motion.div>

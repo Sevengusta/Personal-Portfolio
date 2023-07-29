@@ -115,7 +115,7 @@ const Show = () => {
                             <Button>Repositório</Button>
                           </Link>
                           <Link href={"https://www.linkedin.com/feed/update/urn:li:activity:7084325121124933632/"} target="_blank">
-                            <Button>Vídeo</Button>
+                            <Button>Ir para Vídeo</Button>
                           </Link>
                         </div>
                       </div>

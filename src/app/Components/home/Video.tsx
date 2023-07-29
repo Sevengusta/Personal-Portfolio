@@ -199,7 +199,7 @@ export const Video = () => {
                     </defs>
                   </svg>
 
-                  <h1>Contador formado com experiência de trabalho no setor</h1>
+                  <h1>Contador, formado, com experiências de trabalho no setor</h1>
                 </motion.div>
               )}
               {screen2 && (
@@ -257,7 +257,7 @@ export const Video = () => {
                   </svg>
 
                   <h1>
-                    Programador a procura de sua primeira oportunidade na área
+                    Programador, a procura de sua primeira oportunidade na área
                   </h1>
                 </motion.div>
               )}
@@ -281,7 +281,7 @@ export const Video = () => {
                     "
                 >
                   <h1 className="text-2xl font-black text-white">
-                    Certificações
+                    Certificados
                   </h1>
                   <svg
                     width="800px"
@@ -311,7 +311,7 @@ export const Video = () => {
                   </svg>
 
                   <h1>
-                    O curso em programação que utilizado para a estudar é o
+                    O curso de programação que utilizo para a estudar é o
                     pacote FullStack da B7Web
                   </h1>
                 </motion.div>
