@@ -144,7 +144,7 @@ const Show = () => {
 
                   "
                   >
-                    <Image alt="Projeto Canil" src={'/images/nodejs.png'} width={400} height={200} className="w-full h-full" />
+                    <Image alt="Projeto Canil" src={'/images/Canil.png'} width={400} height={200} className="w-full h-full" />
                     <div
                       className=" 
                       p-4
