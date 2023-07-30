@@ -32,7 +32,7 @@ const Frameworks = () => {
       >
         <div>
 
-          <Font>Frameworks</Font>
+          <Font>Conhecimentos</Font>
         </div>
           <div className="grid grid-cols-4 w-full gap-4 justify-around mt-2 sm:text-xl text-lg ">
             <div className="">

@@ -54,10 +54,8 @@ const Suport = () => {
         className="col-span-2 flex flex-col"
         variants={{
           hidden: { opacity: 0, y: 75 },
-          visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"
-        transition={{ duration: 1, delay: 0.25 }}
       >
         <div
           className="
