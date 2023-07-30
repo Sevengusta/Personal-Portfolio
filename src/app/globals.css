@@ -31,7 +31,7 @@ body {
 .gradient {
     color: transparent;
     background-clip: text;
-    background-image: linear-gradient(to top, red, orange);
+    background-image: linear-gradient(to top, #ef4444  , #f97316);
 }
 
 .homeLeft{

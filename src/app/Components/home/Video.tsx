@@ -96,7 +96,7 @@ export const Video = () => {
                 overflow-hidden
                 h-60 
                 w-full
-                rounded-md
+                rounded
                 bg-gradient-to-t
                 to-orange-500 
               from-red-500 

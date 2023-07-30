@@ -16,7 +16,7 @@ const NavName: React.FC<NavProps> = ({ children, refs, onClick }) => {
           className=" 
               w-0
               h-[2px]
-              bg-gradient-to-r 
+              bg-gradient-to-t
               from-red-500 
               to-orange-500 
               ease-in-out 

@@ -65,7 +65,7 @@ const Show = () => {
                 >
                   <div
                     className="
-                    rounded-md
+                    rounded
                     bg-gradient-to-t
                     from-red-500
                     to-orange-500 

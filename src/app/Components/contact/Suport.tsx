@@ -103,6 +103,7 @@ const Suport = () => {
           <label htmlFor="">Nome</label>
 
           <input
+            autoComplete="off"
             value={name}
             name="name"
             onChange={(e) => setName(e.target.value)}
@@ -124,6 +125,7 @@ const Suport = () => {
         <div className="flex flex-col gap-2">
           <label htmlFor="">E-mail</label>
           <input
+            autoComplete="off"
             value={email}
             name="email"
             onChange={(e) => setEmail(e.target.value)}
@@ -143,6 +145,7 @@ const Suport = () => {
         <div className="flex flex-col gap-2">
           <label htmlFor="">Deixe sua mensagem</label>
           <textarea
+            autoComplete="off"
             value={message}
             name="message"
             onChange={(e) => setMessage(e.target.value)}
