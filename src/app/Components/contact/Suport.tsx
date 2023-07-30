@@ -1,42 +1,45 @@
 import React, { FormEvent } from "react";
 import { Font } from "../comuns/Font";
 import { useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, RefObject } from "react";
 import { motion, useAnimation } from "framer-motion";
 import Button from "../comuns/Button";
 import MoneyImage from "./MoneyImage";
+import emailjs from "@emailjs/browser";
 
 const Suport = () => {
   const [isSubmitted, setSubmitted] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  async function onSubmit(e: FormEvent<HTMLFormElement>)  {
-    
+  const form: RefObject<HTMLFormElement> | null = useRef(null);
+
+  function sendEmail(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = {
       name: name,
       email: email,
       message: message,
     };
-    console.log(data)
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
+
+    console.log(data);
+    setSubmitted(true);
+
+    if (form?.current) {
+      emailjs.sendForm('service_3uhfznm', 'template_xt5px0d', form.current, 'lL7REh5lAfss-DyFc')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
       });
-      if (!res.ok) {
-        throw new Error("HTTP error! status:" + res.status);
-      }
-      setSubmitted(true);
-      const responseData = await res.json();
-    } catch (error: any) {
-      console.log("ocorreu um erro na requisição" + error.message);
+
+
+
+
+
+      
     }
-  };
+  }
 
   const { ref, inView } = useInView({ threshold: 0.2 });
   const mainControls = useAnimation();
@@ -73,39 +76,38 @@ const Suport = () => {
       </motion.div>
     </div>
   ) : (
-      <motion.div
-        className="col-span-2"
-      >
-        <div
-          className="
+    <motion.div className="col-span-2">
+      <div
+        className="
             text-lg 
             sm:text-xl
             text-center 
             md:text-2xl
           "
-        >
-          <Font>Fale comigo, responderei o mais rápido possível</Font>
-        </div>
-        <form
-          onSubmit={onSubmit}
-          action=""
-          className="flex flex-col gap-2 py-2"
-        >
-          <div
-            className="
+      >
+        <Font>Fale comigo, responderei o mais rápido possível</Font>
+      </div>
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        className="flex flex-col gap-2 py-2"
+      >
+        <div
+          className="
               flex 
               flex-col 
               gap-2
               
             "
-          >
-            <label htmlFor="">Nome</label>
+        >
+          <label htmlFor="">Nome</label>
 
-            <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              type="text"
-              className="
+          <input
+            value={name}
+            name="name"
+            onChange={(e) => setName(e.target.value)}
+            type="text"
+            className="
               bg-gray-600 
               placeholder:text-white 
                 outline-none
@@ -114,18 +116,19 @@ const Suport = () => {
                 rounded
                 w-full
               "
-              required
-              placeholder=""
-            />
-          </div>
+            required
+            placeholder=""
+          />
+        </div>
 
-          <div className="flex flex-col gap-2">
-            <label htmlFor="">E-mail</label>
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              className="
+        <div className="flex flex-col gap-2">
+          <label htmlFor="">E-mail</label>
+          <input
+            value={email}
+            name="email"
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            className="
                 bg-gray-600 
                 placeholder:text-white 
                   outline-none
@@ -134,15 +137,16 @@ const Suport = () => {
                   rounded
                   w-full
                   "
-              placeholder=""
-            />
-          </div>
-          <div className="flex flex-col gap-2">
-            <label htmlFor="">Deixe sua mensagem</label>
-            <textarea
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="
+            placeholder=""
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="">Deixe sua mensagem</label>
+          <textarea
+            value={message}
+            name="message"
+            onChange={(e) => setMessage(e.target.value)}
+            className="
                 bg-gray-600 
                 placeholder:text-white 
                   outline-none
@@ -154,15 +158,13 @@ const Suport = () => {
                   flex
                   resize-none
                   "
-              placeholder=""
-            ></textarea>
-          </div>
-          
-          <Button>
-            Enviar
-          </Button>
-        </form>
-      </motion.div>
+            placeholder=""
+          ></textarea>
+        </div>
+
+        <Button value="Send">Enviar</Button>
+      </form>
+    </motion.div>
   );
 };
 
