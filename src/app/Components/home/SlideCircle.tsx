@@ -11,10 +11,11 @@ const SlideCircle = ( {slideChange} : SlideCircle) => {
             font-extrabold  
             rounded-full
             text-transparent
-            bg-gradient-to-r
+            bg-gradient-to-t
             to-orange-500 
             from-red-500 
-            p-1
+            xl:p-[3px]
+            p-[2px]
         '
     >
         <div 
@@ -25,7 +26,8 @@ const SlideCircle = ( {slideChange} : SlideCircle) => {
             open:bg-white
             w-full
             h-full
-            p-4
+            xl:p-3
+            p-2
             cursor-pointer
         '>
             

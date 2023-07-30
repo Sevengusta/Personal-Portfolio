@@ -11,19 +11,19 @@ const Page = () => {
       <header className="bg-gray-800" >
         <Header />
       </header>
-      <section className="bg-gray-600" >
+      <section className="bg-slate-700" >
         <Home />
       </section >
       <section className="bg-gray-800"  >
         <About />
       </section>
-      <section className="bg-gray-600"  >
+      <section className="bg-slate-700"  >
         <Projects />
       </section>
       <section className="bg-gray-800"  >
         <Contact />
       </section>
-      <section className="bg-gray-600" >
+      <section className="bg-slate-700" >
         <Footer />
       </section>
     </>

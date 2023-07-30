@@ -9,7 +9,7 @@ export const Font = ({ children }: Font) => {
           font-extrabold  
           bg-clip-text 
           text-transparent
-          bg-gradient-to-r
+          bg-gradient-to-t
           to-orange-500 
           from-red-500 
           inline

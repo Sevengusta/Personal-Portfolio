@@ -25,7 +25,7 @@ const MobileNav = () => {
               h-[4px] 
               rounded 
               block  
-              bg-orange-500
+              bg-orange-600
             "
           ></motion.span>
           <motion.span
@@ -38,7 +38,7 @@ const MobileNav = () => {
               h-[4px] 
               rounded 
               block 
-              bg-orange-500
+              bg-orange-600
             "
           ></motion.span>
           <motion.span
@@ -51,7 +51,7 @@ const MobileNav = () => {
               h-[4px] 
               rounded 
               block 
-              bg-orange-500
+              bg-orange-600
             "
           ></motion.span>
         </motion.button>

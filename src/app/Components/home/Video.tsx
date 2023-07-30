@@ -97,9 +97,10 @@ export const Video = () => {
                 h-60 
                 w-full
                 rounded-md
-                bg-gradient-to-r
-                from-red-500
-                to-orange-500 p-1
+                bg-gradient-to-t
+                to-orange-500 
+              from-red-500 
+                p-1
               "
             >
               {screen1 && (

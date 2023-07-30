@@ -45,7 +45,7 @@ export const Languages = () => {
                 className="ease-out duration-300 cursor-pointer transform hover:scale-125 m-auto w-[60px] sm:w-[80px]"
               >
                 <linearGradient id="color" x1="100%" y1="100%" x2="0%" y2="0%">
-                  <stop stopColor="#ef4444" offset="0%" />
+                  <stop stopColor="#ef4444" offset="50%" />
                   <stop stopColor="#f97316" offset="100%" />
                 </linearGradient>
                 <g transform="translate(384 48)" fill="url(#color)">

@@ -16,9 +16,9 @@ const Button = ({ children, backForm, value  }: Button) => {
             p-2 
             my-2 
             rounded 
-            bg-gradient-to-r 
-            from-red-500 
+            bg-gradient-to-t 
             to-orange-500 
+          from-red-500 
             hover:shadow-red-500/70 
             ease-out 
             duration-700 
