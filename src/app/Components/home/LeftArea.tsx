@@ -50,8 +50,8 @@ const LeftArea = () => {
         <h1 className=" text-3xl  md:text-5xl md:py-4">Seja bem vindo</h1>
         <p className=" text-sm  md:text-xl xl:text-xl  py-2">
           Eu sou o Gustavo, tenho 26 anos de idade e estou cursando <Font> Computação </Font>
-          pela Univesidade Federal Fluminense. Atualmente, utilizo as linguagens
-          <Font> PHP e Javascript </Font>para realizar projetos front e backend, com
+          pela Univesidade Federal Fluminense. Atualmente, utilizo as linguagens focadas no
+          <Font> Backend </Font>para realizar projetos front e backend, com
           enfoque na área de
           <Font> Finanças e Validação de dados. </Font>
         </p>
