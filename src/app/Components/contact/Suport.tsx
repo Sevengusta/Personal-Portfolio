@@ -28,7 +28,7 @@ const Suport = () => {
     if (form?.current) {
       emailjs.sendForm('service_3uhfznm', 'template_xt5px0d', form.current, 'lL7REh5lAfss-DyFc')
       .then((result) => {
-          console.log(result.text);
+          console.log('mensavem enviada com sucesso');
       }, (error) => {
           console.log(error.text);
       });
@@ -54,7 +54,9 @@ const Suport = () => {
         className="col-span-2 flex flex-col"
         variants={{
           hidden: { opacity: 0, y: 75 },
+          visible: { opacity: 75, y: 0 },
         }}
+        
         initial="hidden"
       >
         <div
