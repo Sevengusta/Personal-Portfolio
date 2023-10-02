@@ -1,43 +1,40 @@
 import React, { FormEvent } from "react";
 import { Font } from "../comuns/Font";
+import { zodResolver} from '@hookform/resolvers/zod';
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState, useRef, RefObject } from "react";
 import { motion, useAnimation } from "framer-motion";
 import Button from "../comuns/Button";
 import MoneyImage from "./MoneyImage";
 import emailjs from "@emailjs/browser";
+import { useForm } from "react-hook-form";
+import { SendMailFormSchema } from "@/app/schemas/formSchema";
+import toast from "react-hot-toast";
+import { useToaster } from 'react-hot-toast/headless'
+
 
 const Suport = () => {
   const [isSubmitted, setSubmitted] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const { register, handleSubmit, formState: {errors}} = useForm({
+    resolver: zodResolver(SendMailFormSchema)
+  })
   const form: RefObject<HTMLFormElement> | null = useRef(null);
+  const handleButtonClick = () => {
+    toast.success('Button clicked!'); // You can customize the notification message and style here
+  };
 
-  function sendEmail(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const data = {
-      name: name,
-      email: email,
-      message: message,
-    };
+  
 
-    console.log(data);
+  function handleSendMailForm() {
     setSubmitted(true);
 
     if (form?.current) {
       emailjs.sendForm('service_3uhfznm', 'template_xt5px0d', form.current, 'lL7REh5lAfss-DyFc')
       .then((result) => {
-          console.log('mensavem enviada com sucesso');
+          console.log('mensagem enviada com sucesso');
       }, (error) => {
           console.log(error.text);
       });
-
-
-
-
-
-      
     }
   }
 
@@ -46,7 +43,6 @@ const Suport = () => {
   useEffect(() => {
     inView ? mainControls.start("visible") : mainControls.start("hidden");
   }, [mainControls, inView]);
-
   return isSubmitted ? (
     <div ref={ref}>
       <motion.div
@@ -89,80 +85,157 @@ const Suport = () => {
       </div>
       <form
         ref={form}
-        onSubmit={sendEmail}
+        onSubmit={handleSubmit(handleSendMailForm)}
         className="flex flex-col gap-2 py-2"
       >
         <div
           className="
-              flex 
-              flex-col 
-              gap-2
-              
+              mt-5
+              w-full
+              items-center
             "
         >
-          <label htmlFor="">Nome</label>
+          <div className="relative ">
+            <input
+              autoComplete="off"
+              {...register('name')}
+              type="text"
+              className="
+                peer
+                w-full
+                bg-gray-600 
+                placeholder:text-white 
+                text-orange-500
+                border-b-2
+                focus:outline-none
+                focus:border-b-2 
+                focus:border-orange-500
+                transition-colors
+                duration-500
+                placeholder-transparent
+                "
+                placeholder=""
+            />
+            <label 
+              className="
+                pl-1
+                absolute 
+                left-0 
+                -top-6
+                text-sm 
+                transition-all
+                text-white
+                peer-placeholder-shown:text-white
+                peer-placeholder-shown:top-0
+                peer-placeholder-shown:text-base
+                peer-focus:text-top 
+                peer-focus:-top-6
+                peer-focus:text-orange-500
+                peer-focus:text-sm
+              ">
+                Nome
+            </label>
+            {errors.name && <p>  {errors.name.message as string }</p>}
+          </div>
+        </div>
 
+
+        <div className="
+         mt-5
+         w-full
+         items-center
+        ">
+          <div className="relative">
           <input
             autoComplete="off"
-            value={name}
-            name="name"
-            onChange={(e) => setName(e.target.value)}
+            {...register('email')}
             type="text"
             className="
+              peer
+              w-full
               bg-gray-600 
               placeholder:text-white 
-                outline-none
-                focus:ring
-                focus:ring-orange-500
-                rounded
-                w-full
-              "
-            required
+              text-orange-500
+              border-b-2
+              focus:outline-none
+              focus:border-b-2 
+              focus:border-orange-500
+              transition-colors
+              duration-500
+              placeholder-transparent
+            "
             placeholder=""
           />
-        </div>
 
-        <div className="flex flex-col gap-2">
-          <label htmlFor="">E-mail</label>
-          <input
-            autoComplete="off"
-            value={email}
-            name="email"
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
+          <label 
             className="
-                bg-gray-600 
-                placeholder:text-white 
-                  outline-none
-                  focus:ring
-                  focus:ring-orange-500
-                  rounded
-                  w-full
-                  "
-            placeholder=""
-          />
+              pl-1
+              absolute 
+              left-0 
+              -top-6
+              text-sm 
+              transition-all
+              text-white
+              peer-placeholder-shown:text-white
+              peer-placeholder-shown:top-0
+              peer-placeholder-shown:text-base
+              peer-focus:text-top 
+              peer-focus:-top-6
+              peer-focus:text-orange-500
+              peer-focus:text-sm
+            "
+            >
+            E-mail
+            </label>
+            {errors.email && <p> {errors.email.message as string}</p>}
+
+          </div>
+          
         </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="">Deixe sua mensagem</label>
-          <textarea
-            autoComplete="off"
-            value={message}
-            name="message"
-            onChange={(e) => setMessage(e.target.value)}
-            className="
+        <div className="
+          mt-5
+          w-full
+          items-center
+        ">
+          <div className="relative ">
+            <textarea
+              autoComplete="off"
+              {...register('message')}
+              className="
+                peer
+                w-full
                 bg-gray-600 
                 placeholder:text-white 
-                  outline-none
-                  focus:ring
-                  focus:ring-orange-500
-                  rounded
-                  w-full
-                  h-20
-                  flex
-                  resize-none
-                  "
-            placeholder=""
-          ></textarea>
+                text-orange-500
+                border-b-2
+                focus:outline-none
+                focus:border-b-2 
+                focus:border-orange-500
+                transition-colors
+                duration-500
+                placeholder-transparent
+                resize-none
+              "
+              placeholder=""
+            ></textarea>
+            <label className="
+              pl-1
+              absolute 
+              left-0 
+              -top-6
+              text-sm 
+              transition-all
+              text-white
+              peer-placeholder-shown:text-white
+              peer-placeholder-shown:top-0
+              peer-placeholder-shown:text-base
+              peer-focus:text-top 
+              peer-focus:-top-6
+              peer-focus:text-orange-500
+              peer-focus:text-sm
+            ">Deixe sua mensagem</label>
+            {errors.message && <p> {errors.message.message as string}</p>}
+          </div>
         </div>
 
         <Button value="Send">Enviar</Button>
