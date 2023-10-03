@@ -5,7 +5,7 @@ import { About } from "./Components/about/About";
 import { Projects } from "./Components/projects/Projects";
 import { Footer } from "./Components/footer/Footer";
 import Contact from "./Components/contact/Contact";
-import {Toaster} from 'react-hot-toast'
+import { Toaster } from "react-hot-toast";
 const Page = () => {
   return (
     <>

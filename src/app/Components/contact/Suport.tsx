@@ -10,7 +10,6 @@ import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import { SendMailFormSchema } from "@/app/schemas/formSchema";
 import toast from "react-hot-toast";
-import { useToaster } from 'react-hot-toast/headless'
 
 
 const Suport = () => {
@@ -19,11 +18,11 @@ const Suport = () => {
     resolver: zodResolver(SendMailFormSchema)
   })
   const form: RefObject<HTMLFormElement> | null = useRef(null);
-  const handleButtonClick = () => {
-    toast.success('Button clicked!'); // You can customize the notification message and style here
-  };
-
-  
+  function tostar ()  {
+    errors.name && <p>  {toast.error(errors.name.message as string )}</p>    
+    errors.email && <p>  {toast.error(errors.email.message as string )}</p>    
+    errors.message && <p>  {toast.error(errors.message.message as string )}</p>    
+  }
 
   function handleSendMailForm() {
     setSubmitted(true);
@@ -135,7 +134,6 @@ const Suport = () => {
               ">
                 Nome
             </label>
-            {errors.name && <p>  {errors.name.message as string }</p>}
           </div>
         </div>
 
@@ -187,7 +185,6 @@ const Suport = () => {
             >
             E-mail
             </label>
-            {errors.email && <p> {errors.email.message as string}</p>}
 
           </div>
           
@@ -234,11 +231,10 @@ const Suport = () => {
               peer-focus:text-orange-500
               peer-focus:text-sm
             ">Deixe sua mensagem</label>
-            {errors.message && <p> {errors.message.message as string}</p>}
           </div>
         </div>
 
-        <Button value="Send">Enviar</Button>
+        <Button backForm={() => tostar()} value="Send">Enviar</Button>
       </form>
     </motion.div>
   );
