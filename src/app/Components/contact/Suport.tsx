@@ -19,9 +19,30 @@ const Suport = () => {
   })
   const form: RefObject<HTMLFormElement> | null = useRef(null);
   function tostar ()  {
-    errors.name && <p>  {toast.error(errors.name.message as string )}</p>    
-    errors.email && <p>  {toast.error(errors.email.message as string )}</p>    
-    errors.message && <p>  {toast.error(errors.message.message as string )}</p>    
+    errors.name && toast((t) => (
+      <span className=" flex items-center">
+        {errors.name?.message as string}
+        <button onClick={() => toast.dismiss(t.id)}>
+          ❌
+        </button>
+      </span>
+    ))
+    errors.email && toast((t) => (
+      <span className=" flex items-center">
+        {errors.email?.message as string}
+        <button onClick={() => toast.dismiss(t.id)}>
+          ❌
+        </button>
+      </span>
+    ))
+    toast((t) => (
+      <span className=" flex items-center">
+        {errors.message?.message as string ?? 'Pressione novamente para entender os erros' }
+        <button onClick={() => toast.dismiss(t.id)}>
+          ❌
+        </button>
+      </span>
+    ))
   }
 
   function handleSendMailForm() {
@@ -234,7 +255,7 @@ const Suport = () => {
           </div>
         </div>
 
-        <Button backForm={() => tostar()} value="Send">Enviar</Button>
+        <Button backForm={tostar} value="Send">Enviar</Button>
       </form>
     </motion.div>
   );

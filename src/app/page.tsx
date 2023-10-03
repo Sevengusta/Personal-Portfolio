@@ -26,7 +26,7 @@ const Page = () => {
       </section>
       <section className="bg-gray-600" >
         <Footer />
-        <Toaster position="top-right" />
+        <Toaster position="bottom-right" />
       </section>
     </>
   );
