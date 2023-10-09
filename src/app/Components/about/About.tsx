@@ -44,6 +44,7 @@ export const About = () => {
           <p className=" text-sm  md:text-xl xl:text-xl  py-2">
             Meu objetivo atual é me realocar no mercado de trabalho em São Paulo e desenvolver 
             as minhas habilidades profissionais mais valiosas: analisar e transformar dados.
+            
           </p>
           <div
             className="

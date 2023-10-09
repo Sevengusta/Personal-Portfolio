@@ -81,7 +81,7 @@ const Academy = () => {
         "
       >
         <motion.div animate={animationRight}>
-          <Font>Computação</Font>
+          <Font>Computação - EAD</Font>
           <Image
             className="m-auto py-[10px] w-1/4 sm:w-1/2 "
             alt="UFF"
@@ -89,7 +89,7 @@ const Academy = () => {
             width={130}
             height={127}
           />
-          <Font>08/2023 - 12/2026</Font>
+          <Font>08/2023 - 08/2026</Font>
         </motion.div>
       </h3>
     </div>

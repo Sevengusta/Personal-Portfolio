@@ -312,7 +312,7 @@ export const Video = () => {
                   </svg>
 
                   <h1>
-                    profissional, que utiliza a contabilidade como diferencial, 100% dedicado á área de Dados 
+                    Profissional, que utiliza a contabilidade como diferencial, 100% dedicado na área de Dados 
                     
                   </h1>
                 </motion.div>
