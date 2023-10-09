@@ -258,7 +258,7 @@ export const Video = () => {
                   </svg>
 
                   <h1>
-                    Programador, a procura de sua primeira oportunidade na área
+                    Programador, estudando todos os dias desde 01/04/2023
                   </h1>
                 </motion.div>
               )}
@@ -312,8 +312,8 @@ export const Video = () => {
                   </svg>
 
                   <h1>
-                    O curso de programação que utilizo para a estudar é o
-                    pacote FullStack da B7Web
+                    profissional, que utiliza a contabilidade como diferencial, 100% dedicado á área de Dados 
+                    
                   </h1>
                 </motion.div>
               )}

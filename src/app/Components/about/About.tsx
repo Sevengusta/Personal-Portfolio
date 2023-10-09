@@ -42,8 +42,8 @@ export const About = () => {
             <Font>Formação acadêmica</Font>
           </h3>
           <p className=" text-sm  md:text-xl xl:text-xl  py-2">
-            Meu objetivo principal no mundo da programação é criar soluções que
-            facilitem a vida de todos os usuários da informação contábil.
+            Meu objetivo atual é me realocar no mercado de trabalho em São Paulo e desenvolver 
+            as minhas habilidades profissionais mais valiosas: analisar e transformar dados.
           </p>
           <div
             className="
@@ -74,9 +74,8 @@ export const About = () => {
               py-2
             "
             >
-              Atualmente, utilizo o MySQL e o MongoDB para a manipulação de dados
-              , bem como utliizo o Insônia para realização de
-              testes em APIs.
+              Minha especialidade é a criação de dashboards dinâmicos com a linguagem Python. 
+              Gosto de aprender sobre Data Science e tenho sólidos conhecimentos nas linguagens Javascript e PHP. 
             </p>
           </div>
           <div

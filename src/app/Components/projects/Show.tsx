@@ -161,7 +161,7 @@ const Show = () => {
 
                       "
                       >
-                        <Image alt="Projeto Canil" src={'/images/Canil.png'} width={400} height={200} className="w-full h-full" />
+                        <Image alt="Dashboard BI" src={'/images/Python_BI_Dashboard.png'} width={400} height={200} className="w-full h-full" />
                         <div
                           className=" 
                           p-4
@@ -181,14 +181,13 @@ const Show = () => {
                         >
                           
                           <Font>
-                            Projeto Elaborado para treinamento da arquitetura MVC
-                            com Node.js
+                            BI no setor de games. Dasboards dinâmicos utilizando: pyplot, pandas e o framework streamlit para exibição dos gráficos 
                           </Font>
                           <div className="gap-3 flex justify-center p-2 ">
-                            <Link href={"https://github.com/Sevengusta/Nodejs-Canil"} target="_blank">
+                            <Link href={"https://github.com/Sevengusta/Python_dash_game_sales/tree/main"} target="_blank">
                               <Button>Repositório</Button>
                             </Link>
-                            <Link href={"https://stormy-lamb-bathing-suit.cyclic.app/"}>
+                            <Link href={"https://sevengusta-dash-game.streamlit.app/"}>
                               <Button>Projeto</Button>
                             </Link>
                           </div>
