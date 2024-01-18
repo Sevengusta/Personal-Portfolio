@@ -49,8 +49,8 @@ const Show = () => {
         >
           <Font>Projetos </Font>
         </h3>
-        <div ref={ref}  className="flex flex-col   w-full">
-          <AnimatePresence >
+        <div ref={ref}  className="flex flex-col h-full  w-full">
+          <AnimatePresence  >
 
             <motion.div animate={animationLeft}  >
               <div className=" h-full  ">
@@ -110,7 +110,7 @@ const Show = () => {
                           Análise de ações, consumindo a API de ações Yahoo Finance e
                           utilizando a biblioteca Dash para visualização dos gráficos
                         </Font>
-                        <div className="gap-3 flex justify-center p-2 ">
+                        <div className="gap-3 flex justify-center p-1 ">
                           <Link href={"https://github.com/Sevengusta/stocks"} target="_blank" >
                             <Button>Repositório</Button>
                           </Link>
@@ -161,7 +161,7 @@ const Show = () => {
 
                       "
                       >
-                        <Image alt="Dashboard BI" src={'/images/Python_BI_Dashboard.png'} width={400} height={200} className="w-full h-full" />
+                        <Image alt="Dashboard BI" src={'/images/Python_BI_Streamlit.png'} width={400} height={200} className="w-full h-full" />
                         <div
                           className=" 
                           p-4
@@ -183,11 +183,11 @@ const Show = () => {
                           <Font>
                             Kaggle challenge: BI no setor de games. Dasboards dinâmicos utilizando: pyplot, pandas e a biblioteca gráfica streamlit 
                           </Font>
-                          <div className="gap-3 flex justify-center p-2 ">
+                          <div className="gap-3 flex justify-center p-1 ">
                             <Link href={"https://github.com/Sevengusta/Python_dash_game_sales/tree/main"} target="_blank">
                               <Button>Repositório</Button>
                             </Link>
-                            <Link href={"https://sevengusta-dash-game.streamlit.app/"}>
+                            <Link href={"https://sevengusta-dash-game-sales.streamlit.app/"}>
                               <Button>Projeto</Button>
                             </Link>
                           </div>
