@@ -87,7 +87,7 @@ const Show = () => {
 
                     "
                     >
-                      <Image alt="Calculadora Contábil" src={'/images/Calculadora.png'} width={400} height={200} className="w-full h-full" />
+                      <Image alt="Calculadora Contábil" src={'/images/stock_market1.png'} width={400} height={200} className="w-full h-full" />
                       <div
                         className=" 
                         sm:text-xl
@@ -107,14 +107,14 @@ const Show = () => {
                       "
                       >
                         <Font>
-                          Calculadora contábil criada com arquitetura MVC através
-                          do Laravel
+                          Análise de ações, consumindo a API de ações Yahoo Finance e
+                          utilizando a biblioteca Dash para visualização dos gráficos
                         </Font>
                         <div className="gap-3 flex justify-center p-2 ">
-                          <Link href={"https://github.com/Sevengusta/Laravel-PHP-calculadora-contabil"} target="_blank" >
+                          <Link href={"https://github.com/Sevengusta/stocks"} target="_blank" >
                             <Button>Repositório</Button>
                           </Link>
-                          <Link href={"https://www.linkedin.com/feed/update/urn:li:activity:7084325121124933632/"} target="_blank">
+                          <Link href={"https://www.linkedin.com/feed/update/urn:li:activity:7149911944345423872/"} target="_blank">
                             <Button>Ir para Vídeo</Button>
                           </Link>
                         </div>
@@ -181,7 +181,7 @@ const Show = () => {
                         >
                           
                           <Font>
-                            BI no setor de games. Dasboards dinâmicos utilizando: pyplot, pandas e o framework streamlit para exibição dos gráficos 
+                            Kaggle challenge: BI no setor de games. Dasboards dinâmicos utilizando: pyplot, pandas e a biblioteca gráfica streamlit 
                           </Font>
                           <div className="gap-3 flex justify-center p-2 ">
                             <Link href={"https://github.com/Sevengusta/Python_dash_game_sales/tree/main"} target="_blank">

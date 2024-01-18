@@ -49,7 +49,7 @@ const LeftArea = () => {
 
         <h1 className=" text-3xl  md:text-5xl md:py-4">Seja bem vindo</h1>
         <p className=" text-sm  md:text-xl xl:text-xl  py-2">
-          Eu sou o Gustavo, tenho 26 anos de idade e estou cursando <Font> Computação </Font>
+          Eu sou o Gustavo, tenho 27 anos de idade e estou cursando <Font> Computação </Font>
           pela Univesidade Federal Fluminense. Atualmente, utilizo o
           <Font> Python </Font>para realizar projetos relacionados a análise de dados, com
           enfoque na área<Font> de Finanças e de Inteligência de mercado. </Font>

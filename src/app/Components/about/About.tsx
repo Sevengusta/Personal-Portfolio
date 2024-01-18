@@ -42,8 +42,8 @@ export const About = () => {
             <Font>Formação acadêmica</Font>
           </h3>
           <p className=" text-sm  md:text-xl xl:text-xl  py-2">
-            Meu objetivo atual é me realocar no mercado de trabalho em São Paulo e desenvolver 
-            as minhas habilidades profissionais mais valiosas: analisar e transformar dados.
+            Meu objetivo atual é continuar desenvolvendo soluções inovadoras na Área de Ciência de Dados com 
+            foco em analisar e transformar dados.
             
           </p>
           <div
@@ -76,7 +76,7 @@ export const About = () => {
             "
             >
               Minha especialidade é a criação de dashboards dinâmicos com a linguagem Python. 
-              Gosto de aprender sobre Data Science e tenho sólidos conhecimentos nas linguagens Javascript e PHP. 
+              Além disso, estou aprendendo todos os dias sobre Machine Learning e desenvolvendo sólidos conhecimentos sobre Estatística com a linguagem R.
             </p>
           </div>
           <div
