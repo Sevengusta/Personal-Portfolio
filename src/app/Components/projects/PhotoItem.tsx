@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Photo } from "../data/photo";
+import { Photo } from "../data/experiencesData";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";

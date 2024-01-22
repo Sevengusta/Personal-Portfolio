@@ -1,6 +1,5 @@
 "use client";
 import { useEffect } from "react";
-import Certificates from "./Certificates";
 import Show from "./Show";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -30,7 +29,6 @@ export const Projects = () => {
         transition={{ duration: 0.5, delay: 0.25 }}
       >
         <Show />
-        <Certificates />
       </motion.div>
     </div>
   );

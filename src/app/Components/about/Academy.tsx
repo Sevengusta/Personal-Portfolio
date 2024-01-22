@@ -55,8 +55,8 @@ const Academy = () => {
         className="
           text-lg 
           sm:text-xl
-          text-center 
           md:text-2xl
+          text-center 
         "
       >
         <motion.div animate={animationLeft}>
