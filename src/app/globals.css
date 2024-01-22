@@ -30,6 +30,11 @@ textarea{
     padding: 0px 4px;
     overflow: hidden;
 }
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+}
 
 .container {
     max-width: 1140px; 
