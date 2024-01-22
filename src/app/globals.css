@@ -1,6 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Import Swiper base styles */
+@import 'swiper/css';
+
+/* Import Swiper pagination styles */
+@import 'swiper/css/pagination';
+
+/* Override the active pagination bullet background color */
+.swiper-pagination-bullet-active {
+    --swiper-pagination-color: linear-gradient(to top, #ef4444, #f59e0b);
+    opacity: var(--swiper-pagination-bullet-opacity, 1);
+    background: var(--swiper-pagination-color, var(--swiper-theme-color));
+  }
 
 body::-webkit-scrollbar {
     display: none;

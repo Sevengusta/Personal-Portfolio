@@ -3,8 +3,10 @@ import { motion, useCycle, AnimatePresence, MotionConfig } from "framer-motion";
 import NavName from "./NavName";
 import { Font } from "../comuns/Font";
 import Link from "next/link";
+import { useTheme } from "@/app/contexts/LanguageContexts";
 const MobileNav = () => {
   const [mobileNav, toggleMobileNav] = useCycle(false, true);
+  const themeCtx = useTheme();
 
   return (
     <div>
@@ -116,16 +118,20 @@ const MobileNav = () => {
               >
                 <ul className="space-y-5 text-2xl">
                   <NavName onClick={() => toggleMobileNav()} refs={"#home"}>
-                    <Font>Início</Font>
+                    {themeCtx?.theme === 'Portuguese' && <Font>Início</Font> }
+                    {themeCtx?.theme === 'English' && <Font>Home</Font> }
                   </NavName>
                   <NavName onClick={() => toggleMobileNav()} refs={"#about"}>
-                    <Font>Sobre mim</Font>
+                  {themeCtx?.theme === 'Portuguese' && <Font>Sobre mim</Font> }
+                  {themeCtx?.theme === 'English' && <Font>About me</Font> }
                   </NavName>
                   <NavName onClick={() => toggleMobileNav()} refs={"#projects"}>
-                    <Font>Projetos</Font>
+                  {themeCtx?.theme === 'Portuguese' && <Font>Projetos</Font> }
+                  {themeCtx?.theme === 'English' && <Font>Projects</Font> }
                   </NavName>
                   <NavName onClick={() => toggleMobileNav()} refs={"#contact"}>
-                    <Font>Contatos</Font>
+                  {themeCtx?.theme === 'Portuguese' && <Font>Contatos</Font> }
+                  {themeCtx?.theme === 'English' && <Font>Contacts</Font> }
                   </NavName>
                 </ul>
               </motion.div>
@@ -142,7 +148,8 @@ const MobileNav = () => {
                   },
                 }}
               >
-                <Font>Onde eu estou?</Font>
+                {themeCtx?.theme === 'Portuguese' && <Font>Onde eu estou?</Font> }
+                {themeCtx?.theme === 'English' && <Font>Where i am?</Font> }
               </motion.div>
               <motion.div
                 className="flex justify-center"
@@ -208,7 +215,8 @@ const MobileNav = () => {
 
                       <div>
                         <h3 className="font-extrabold">WhatsApp</h3>
-                        <h3>Mandar mensagem</h3>
+                        {themeCtx?.theme === 'Portuguese' && <h3>Enviar mensagem</h3> }
+                        {themeCtx?.theme === 'English' && <h3>Send message</h3> }    
                       </div>
                     </Link>
                   </li>
@@ -246,7 +254,8 @@ const MobileNav = () => {
                       </svg>
                       <div>
                         <h3 className="font-extrabold">Linkedin</h3>
-                        <h3>Clique para ver</h3>
+                        {themeCtx?.theme === 'Portuguese' && <h3>Clique para ver</h3> }
+                        {themeCtx?.theme === 'English' && <h3>Click to show</h3> }    
                       </div>
                     </Link>
                   </li>
@@ -287,7 +296,8 @@ const MobileNav = () => {
                       </svg>
                       <div>
                         <h3 className="font-extrabold">Github</h3>
-                        <h3>Clique para ver</h3>
+                        {themeCtx?.theme === 'Portuguese' && <h3>Clique para ver</h3> }
+                        {themeCtx?.theme === 'English' && <h3>Click to show</h3> }    
                       </div>
                     </Link>
                   </li>

@@ -9,6 +9,8 @@ export const Footer = () => {
   useEffect(() => {
     inView ? mainControls.start("visible") : mainControls.start("hidden");
   }, [inView, mainControls]);
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear().toString();
 
   return (
     <div className="container h-[50px]" ref={ref}>
@@ -22,7 +24,7 @@ export const Footer = () => {
         transition={{ duration: 0.5, delay: 0.25 }}
         className="text-sm text-center sm:text-lg lg:text-xl"
       >
-          <Font>© Todos os direitos reservados</Font>
+          <Font currentYear={currentYear}> Gustavo Neves </Font>
       </motion.div>
     </div>
   );

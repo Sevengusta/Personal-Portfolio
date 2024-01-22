@@ -1,11 +1,11 @@
 import React from 'react'
 
 type SlideCircle = {
-    slideChange:() => (void);
-    active: boolean;
+    // slideChange:() => (void);
+    // active: boolean;
 }
 
-const SlideCircle: React.FC<SlideCircle> = ({ slideChange, active }) => {
+const SlideCircle: React.FC<SlideCircle> = () => {
   return (
     <div
       className='
@@ -19,11 +19,10 @@ const SlideCircle: React.FC<SlideCircle> = ({ slideChange, active }) => {
         '
     >
         <div 
-            onClick={slideChange}
+            // onClick={slideChange}
             className={`
                 indicator
                 hover:bg-gray-800 
-                ${active ? 'indicator-active' : false }
                 rounded-full
                 open:bg-white
                 cursor-pointer

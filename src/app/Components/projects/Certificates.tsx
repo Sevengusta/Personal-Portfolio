@@ -40,25 +40,9 @@ const Certificates = () => {
           text-center
           "
       >
-        <Font>Certificados </Font>
+        <Font>Experiências </Font>
       </h3>
-      <motion.div
-        ref={carousel}
-        className="carousel"
-      >
-        <motion.div
-          drag={"x"}
-          dragConstraints={{ right: 0, left: -width }}
-          whileTap={{cursor: "grabbing"}}
-          className="inner-carousel"
-        >
-          {photos.map((item) => (
-            <motion.div key={item.id} className="item">
-                <PhotoItem photo={item} abrir={() => openModal(item.id)} />
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
+      
       {showModal && <Modal image={imageOfModal} fechar={closeModal} />}
     </div>
   );

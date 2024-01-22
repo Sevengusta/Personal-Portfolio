@@ -12,8 +12,7 @@ export const Projects = () => {
     inView ? mainControls.start("visible") : mainControls.start("hidden");
   }, [mainControls, inView]);
   return (
-    <div ref={ref}
-    >
+    <div ref={ref}>
       <motion.div
         id="projects"
         className="
@@ -36,4 +35,3 @@ export const Projects = () => {
     </div>
   );
 };
-  

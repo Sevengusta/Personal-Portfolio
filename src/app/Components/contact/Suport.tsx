@@ -101,7 +101,7 @@ const Suport = () => {
             md:text-2xl
           "
       >
-        <Font>Fale comigo, responderei o mais rápido possível</Font>
+        <Font>Fale comigo; responderei o mais rápido possível</Font>
       </div>
       <form
         ref={form}

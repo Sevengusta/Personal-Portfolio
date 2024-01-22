@@ -6,29 +6,31 @@ import { Projects } from "./Components/projects/Projects";
 import { Footer } from "./Components/footer/Footer";
 import Contact from "./Components/contact/Contact";
 import { Toaster } from "react-hot-toast";
+import { ThemeProvider } from "./contexts/LanguageContexts";
+
 const Page = () => {
   return (
-    <>
-      <header className="bg-gray-800" >
+    <ThemeProvider>
+      <header className="bg-gray-800">
         <Header />
       </header>
-      <section className="bg-gray-600" >
+      <section className="bg-gray-600">
         <Home />
-      </section >
-      <section className="bg-gray-800"  >
+      </section>
+      <section className="bg-gray-800">
         <About />
       </section>
-      <section className="bg-gray-600"  >
+      <section className="bg-gray-600">
         <Projects />
       </section>
-      <section className="bg-gray-800"  >
+      <section className="bg-gray-800">
         <Contact />
       </section>
-      <section className="bg-gray-600" >
+      <section className="bg-gray-600">
         <Footer />
         <Toaster position="bottom-right" />
       </section>
-    </>
+    </ThemeProvider>
   );
 };
 

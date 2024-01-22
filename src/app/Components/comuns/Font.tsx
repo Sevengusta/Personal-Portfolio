@@ -1,8 +1,9 @@
 type Font = {
-  children: string;
+  children: string ;
+  currentYear?: string;
 };
 
-export const Font = ({ children }: Font) => {
+export const Font = ({ children, currentYear }: Font) => {
   return (
     <span
       className="
@@ -15,7 +16,7 @@ export const Font = ({ children }: Font) => {
           inline
       "
     >
-      {children}
+      {children} {currentYear && ` ${currentYear}`}
     </span>
   );
 };
