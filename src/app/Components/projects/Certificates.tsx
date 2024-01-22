@@ -7,29 +7,6 @@ import { motion, useScroll } from "framer-motion";
 
 
 const Certificates = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [imageOfModal, setImageOfModal] = useState("");
-  const [width, setWidth] = useState<number>(0);
-  const carousel = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (carousel.current) {
-      setWidth(carousel.current.scrollWidth - carousel.current?.offsetWidth );
-    }
-
-  }, []);
-  
-
-  const openModal = (id: number) => {
-    const photo = photos.find((item) => item.id === id);
-    if (photo) {
-      setImageOfModal(photo.url);
-      setShowModal(true);
-    }
-  };
-  const closeModal = () => {
-    setShowModal(false);
-  };
 
   return (
     <div className="">
@@ -43,7 +20,6 @@ const Certificates = () => {
         <Font>Experiências </Font>
       </h3>
       
-      {showModal && <Modal image={imageOfModal} fechar={closeModal} />}
     </div>
   );
 };

@@ -10,7 +10,9 @@ type ThemeContext = {
 export const ThemeContext = createContext<ThemeContext | null>(null);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState(localStorage.getItem(STORAGE_KEY) || 'English' || 'Portuguese');
+  const storedTheme = typeof window !== 'undefined' ? localStorage.getItem(STORAGE_KEY) : null;
+  const defaultTheme = storedTheme || 'Portuguese';
+  const [theme, setTheme] = useState(defaultTheme);
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, theme);
