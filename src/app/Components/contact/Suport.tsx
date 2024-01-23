@@ -34,22 +34,22 @@ const Suport = () => {
 
   const tostar = useCallback(() => {
     
-    if (errors.name && themeCtx?.theme === 'Portuguese') {
+    if (errors.name && themeCtx?.theme === "Portuguese") {
       showToast(errors.name?.message as string);
-    } else if (errors.name && themeCtx?.theme === 'English') {
+    } else if (errors.name && themeCtx?.theme === "English") {
       showToast('The name must contain at least 2 characters and less than 20')
     }
 
-    if (errors.email && themeCtx?.theme === 'Portuguese') {
+    if (errors.email && themeCtx?.theme === "Portuguese") {
       showToast(errors.email?.message as string);
-    } else if (errors.email && themeCtx?.theme === 'English') {
+    } else if (errors.email && themeCtx?.theme === "English") {
       showToast('Use a valid email format: example@gmail.com')
     }
   
   
-    if (errors.message && themeCtx?.theme === 'Portuguese') {
+    if (errors.message && themeCtx?.theme === "Portuguese") {
       showToast(errors.message?.message as string);
-    } else if (errors.message && themeCtx?.theme === 'English') {
+    } else if (errors.message && themeCtx?.theme === "English") {
       showToast('The message must contain at least 3 characters')
     }
   }, [errors, themeCtx])
@@ -101,12 +101,12 @@ const Suport = () => {
         <MoneyImage />
         {themeCtx?.theme === "Portuguese" &&
         <Button backForm={() => setSubmitted(false)}>
-          'Clique para enviar outra mensagem'
+          Clique para enviar outra mensagem
         </Button>}
 
         {themeCtx?.theme === "English" &&
         <Button backForm={() => setSubmitted(false)}>
-          'Click to send other message'
+          Click to send other message
         </Button>}
       </motion.div>
     </div>
@@ -120,8 +120,8 @@ const Suport = () => {
             md:text-2xl
           "
       >
-        {themeCtx?.theme === "Portuguese" && <Font>Fale comigo; responderei o mais rápido possível</Font>}
-        {themeCtx?.theme === "English" && <Font>Talk to me; I'll answer as soon as possible</Font>}
+        {themeCtx?.theme === "Portuguese" && <Font>Fale comigo, responderei o mais rápido poss&iacute;vel</Font>}
+        {themeCtx?.theme === "English" && <Font>Talk to me, I&rsquo;ll answer as soon as possible</Font>}
         
       </div>
       <form
