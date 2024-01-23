@@ -8,34 +8,13 @@ import Button from "../comuns/Button";
 import MoneyImage from "./MoneyImage";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
+import { SendMailFormSchema } from "@/app/schemas/formSchema";
 import toast from "react-hot-toast";
 import { ThemeContext, useTheme } from "@/app/contexts/LanguageContexts";
-import {z} from 'zod'
+
 
 const Suport = () => {
   const themeCtx = useTheme()
-  const SendMailFormSchema = z.object({
-      name: z
-        .string()
-        .trim()
-        .min(2, themeCtx?.theme === 'Portuguese' ? 'O nome precisa conter pelo menos 2 caracteres' : 'JAPA')
-        .max(20, 'O máximo de caracteres suportado pelo nome são 20')
-        ,
-      email: z
-        .string()
-        .email('Utilize um formato de email válido: exemplo@gmail.com')
-        ,
-      message: z
-        .string()
-        .trim()
-        .min(3, 'A mensagem precisa conter pelo menos 3 caracteres')
-        ,
-    })
-
-
-
-
-  
   const [isSubmitted, setSubmitted] = useState(false);
   const { register, handleSubmit, formState: {errors}} = useForm({
     resolver: zodResolver(SendMailFormSchema)
@@ -51,18 +30,27 @@ const Suport = () => {
     ));
   }
 
+  
+
   const tostar = () => {
     
-    if (errors.name) {
+    if (errors.name && themeCtx?.theme === 'Portuguese') {
       showToast(errors.name?.message as string);
+    } else if (errors.name && themeCtx?.theme === 'English') {
+      showToast('The name must contain at least 2 characters and less than 20')
     }
-  
-    if (errors.email) {
+
+    if (errors.email && themeCtx?.theme === 'Portuguese') {
       showToast(errors.email?.message as string);
+    } else if (errors.email && themeCtx?.theme === 'English') {
+      showToast('Use a valid email format: example@gmail.com')
     }
   
-    if (errors.message) {
-      showToast(errors.message?.message as string );
+  
+    if (errors.message && themeCtx?.theme === 'Portuguese') {
+      showToast(errors.message?.message as string);
+    } else if (errors.message && themeCtx?.theme === 'English') {
+      showToast('The message must contain at least 3 characters')
     }
   }
 
