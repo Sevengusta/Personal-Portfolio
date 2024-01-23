@@ -4,11 +4,13 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useRef, useEffect } from "react";
 import Image from "next/image";
+import { useTheme } from "@/app/contexts/LanguageContexts";
 
 const Academy = () => {
   const { ref, inView } = useInView({
     threshold: 0.6,
   });
+  const themeCtx = useTheme();
 
   const animationLeft = useAnimation();
   const animationRight = useAnimation();
@@ -60,7 +62,8 @@ const Academy = () => {
         "
       >
         <motion.div animate={animationLeft}>
-          <Font>Ciências Contábeis</Font>
+          {themeCtx?.theme === 'English' && <Font>Accounting</Font>}
+          {themeCtx?.theme === 'Portuguese' && <Font>Ciências Contábeis</Font>}
           <Image
             alt="UFRJ"
             src={"/images/UFRJ.png"}
@@ -81,7 +84,9 @@ const Academy = () => {
         "
       >
         <motion.div animate={animationRight}>
-          <Font>Computação - EAD</Font>
+          {themeCtx?.theme === 'English' && <Font>Computing - AD</Font>}
+          {themeCtx?.theme === 'Portuguese' && <Font>Computação - EAD</Font>}
+          
           <Image
             className="m-auto py-[10px] w-1/4 sm:w-1/2 "
             alt="UFF"

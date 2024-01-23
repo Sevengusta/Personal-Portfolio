@@ -6,6 +6,7 @@ import { useRef, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Experience from "./Experience";
+import { useTheme } from "@/app/contexts/LanguageContexts";
 
 export const About = () => {
   const { ref, inView } = useInView({
@@ -15,6 +16,8 @@ export const About = () => {
   useEffect(() => {
     inView ? mainControls.start("visible") : mainControls.start("hidden");
   }, [inView, mainControls]);
+
+  const themeCtx = useTheme();
   return (
     <div ref={ref} id="about">
       <motion.div
@@ -40,11 +43,21 @@ export const About = () => {
             md:pb-2
           "
           >
-            <Font>Formação acadêmica</Font>
+            
+            {themeCtx?.theme === 'English' && <Font>Education</Font>}
+            {themeCtx?.theme === 'Portuguese' && <Font>Formação acadêmica</Font>}
           </h3>
           <p className=" text-sm  md:text-xl xl:text-xl  py-2">
-            Meu objetivo atual é continuar desenvolvendo soluções inovadoras na
-            Área de Ciência de Dados com foco em analisar e transformar dados.
+
+            {themeCtx?.theme === 'English' && 
+            'My current goal is to continue developing innovative solutions in \
+            Data Science area, focusing on analyzing and transforming data.'
+            }
+            {themeCtx?.theme === 'Portuguese' && 
+            'Meu objetivo atual é continuar desenvolvendo soluções inovadoras na \
+            área de Ciência de Dados, com foco na análise e transformação de dados.'
+            }
+
           </p>
           <div
             className="
@@ -69,7 +82,9 @@ export const About = () => {
               md:pb-2
             "
             >
-              <Font>Stacks</Font>
+              {themeCtx?.theme === 'English' && <Font>Stacks</Font>}
+              {themeCtx?.theme === 'Portuguese' && <Font>Conhecimentos</Font>}
+              
             </h3>
             <p
               className="
@@ -79,10 +94,17 @@ export const About = () => {
               py-2
             "
             >
-              Minha especialidade é a criação de dashboards dinâmicos com a
-              linguagem Python. Além disso, estou aprendendo todos os dias sobre
-              Machine Learning e desenvolvendo sólidos conhecimentos sobre
-              Estatística com a linguagem R.
+            {themeCtx?.theme === 'Portuguese' && 
+            'Minha especialidade é a criação de dashboards dinâmicos com a \
+            linguagem Python. Além disso, estou aprendendo todos os dias sobre \
+            Machine Learning e desenvolvendo sólidos conhecimentos sobre \
+            Estatística com a linguagem R.'
+            }
+            {themeCtx?.theme === 'English' && 
+            'My specialty is create dynamic dashboards with the Python language. \
+             Furthermore, I am learning every day about Machine Learning \
+            and developing solid knowledge about Statistics with the R language.'
+            }
             </p>
           </div>
           <div

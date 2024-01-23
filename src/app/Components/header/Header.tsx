@@ -8,11 +8,6 @@ import { useTheme } from "@/app/contexts/LanguageContexts";
 
 export const Header = () => {
   const { ref, inView } = useInView();
-  // const mainControls = useAnimation();
-  // useEffect(() => {
-  //   inView ? mainControls.start("visible") : mainControls.start("hidden");
-  // }, [mainControls, inView]);
-  const themeCtx = useTheme();
   const setPortuguese = () => {
     if (themeCtx) {
       themeCtx.setTheme("Portuguese");
@@ -23,13 +18,15 @@ export const Header = () => {
       themeCtx.setTheme("English");
     }
   };
+  const themeCtx = useTheme();
 
   return (
     <div ref={ref}>
       <div>
-        <div className="container h-[70px]">
+        <div className="container h-[40px]  xl:h-[70px]">
           <div className="text-2xl ">
-            {themeCtx?.theme === "Portuguese" ? <Font> Portfólio </Font> : <Font> Portfolio </Font>}
+            {themeCtx?.theme === "English" &&  <Font> Portfolio </Font>  }
+            {themeCtx?.theme === "Portuguese" &&  <Font> Portfólio </Font>  }
           </div>
           <div className="w-24 flex justify-between">
             <LanguageBtn src="/images/BR.png" onClick={() => {setPortuguese();

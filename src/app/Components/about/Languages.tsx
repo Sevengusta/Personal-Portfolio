@@ -3,6 +3,7 @@ import { Font } from "../comuns/Font";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { useTheme } from "@/app/contexts/LanguageContexts";
 
 export const Languages = () => {
   const { ref, inView } = useInView({
@@ -26,11 +27,14 @@ export const Languages = () => {
       });
     }
   }, [inView, animationLeft]);
+  const themeCtx = useTheme();
   return (
     <div ref={ref}>
       <motion.div animate={animationLeft}>
         <div>
-          <Font>Linguagens</Font>
+            {themeCtx?.theme === 'English' && <Font>Languages</Font>}  
+            {themeCtx?.theme === 'Portuguese' && <Font>Linguagens</Font>}
+          
           <div className="flex gap-4 justify-around mt-2 sm:text-xl text-lg">
             <div>
             <svg 

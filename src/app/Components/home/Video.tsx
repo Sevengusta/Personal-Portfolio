@@ -10,10 +10,7 @@ import { Navigation, Pagination, A11y, EffectCube } from 'swiper/modules'
 import 'swiper/css/effect-cube';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-
-
-
+import { useTheme } from "@/app/contexts/LanguageContexts";
 
 export const Video = () => {
 
@@ -21,6 +18,7 @@ export const Video = () => {
     threshold: 0.2,
   });
   const animationRight = useAnimation();
+  const themeCtx = useTheme();
 
   useEffect(() => {
     if (inView) {
@@ -57,7 +55,8 @@ export const Video = () => {
               text-center
             "
           >
-            <Font>Um breve resumo</Font>
+            {themeCtx?.theme === 'English' &&  <Font>A brief summary</Font> }
+            {themeCtx?.theme === 'Portuguese' &&  <Font>Um breve resumo</Font> }
           </h3>
           <Swiper 
             effect={'cube'}
@@ -90,7 +89,8 @@ export const Video = () => {
                 "
             >
               <h1 className="text-2xl font-black text-white">
-                Contabilidade
+                {themeCtx?.theme === 'English' && 'Accounting'}
+                {themeCtx?.theme === 'Portuguese' && 'Contabilidade'}
               </h1>
               <svg
                 width="200px"
@@ -169,7 +169,9 @@ export const Video = () => {
               </svg>
 
               <h1 className="pb-7">
-                Contador, formado, com experiências de trabalho no setor
+              {themeCtx?.theme === 'English'  && 'Accountant with considerable work experience in the sector'}
+              {themeCtx?.theme === 'Portuguese'  && 'Contador com considerável experiência de trabalho no setor'}
+                
               </h1>
             </SwiperSlide>
             <SwiperSlide
@@ -185,7 +187,9 @@ export const Video = () => {
                 "
             >
               <h1 className="text-2xl font-black text-white">
-                Ciência de Dados
+                {themeCtx?.theme === 'English' && 'Data Science'}
+                {themeCtx?.theme === 'Portuguese' && 'Ciência de Dados'}
+                
               </h1>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -200,7 +204,8 @@ export const Video = () => {
               </svg>
 
               <h1 className="pb-7 ">
-                Sou estagiário de Ciência de Dados na Bayer desde 15/02/2024 
+                {themeCtx?.theme === 'English' && 'I have been a Data Science intern at Bayer since 02/15/2024'}
+                {themeCtx?.theme === 'Portuguese' && 'Sou estagiário de Ciência de Dados na Bayer desde 15/02/2024'}
               </h1>
             </SwiperSlide>
             
@@ -217,7 +222,9 @@ export const Video = () => {
                 "
             >
               <h1 className="text-2xl font-black text-white">
-                Competidor Kaggle
+                {themeCtx?.theme === 'English' &&  'Kaggle Challenger'}
+                {themeCtx?.theme === 'Portuguese' &&  'Competidor Kaggle'}
+                
               </h1>
               <svg 
                 fill="white" 
@@ -232,7 +239,9 @@ export const Video = () => {
               </svg>
 
               <h1 className="pb-7">
-                Participo de competições sobre resolução de problemas no Kaggle
+              {themeCtx?.theme === 'English' && 'I participate in problem-solving competitions on Kaggle'}
+              {themeCtx?.theme === 'Portuguese' && 'Participo de competições sobre resolução de problemas no Kaggle'}
+                
               </h1>
             </SwiperSlide>
             <div className="absolute z-10 top-[45%] button-prev-slide w-[40px] h-[40px] group-hover:left-0 -left-[23rem] duration-500  grid place-items-center">

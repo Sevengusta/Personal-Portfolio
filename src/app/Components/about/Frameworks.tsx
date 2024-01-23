@@ -3,10 +3,12 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Font } from "../comuns/Font";
+import { useTheme } from "@/app/contexts/LanguageContexts";
 
 const Frameworks = () => {
   const { ref, inView } = useInView({ threshold: 0.2 });
   const animationRight = useAnimation();
+  const themeCtx = useTheme()
 
   useEffect(() => {
     if (inView) {
@@ -31,8 +33,9 @@ const Frameworks = () => {
         
       >
         <div>
-
-          <Font >Bibliotecas</Font>
+            {themeCtx?.theme === 'English' && <Font >Libraries</Font>}
+            {themeCtx?.theme === 'Portuguese' && <Font >Bibliotecas</Font>}
+          
         </div>
           <div className="grid sm:grid-cols-4 grid-cols-2 w-full gap-4 justify-around mt-2 sm:text-xl text-lg ">
             <div className="">

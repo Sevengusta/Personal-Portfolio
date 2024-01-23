@@ -7,9 +7,11 @@ const TextAnimation = () => {
 
     const [text] = useTypewriter({
 
-        words: themeCtx?.theme === "Portuguese" ? 
-        ['Programador', 'Contador', 'Analista de Dados'] : 
-        ['Programmer', 'accountant', 'Data analyst'],
+        words: themeCtx?.theme === "Portuguese"
+        ? ['Programador', 'Contador', 'Analista de Dados']
+        : themeCtx?.theme === "English"
+          ? ['Programmer', 'Accountant', 'Data Analyst']
+          : [],
 
         loop: true,
         typeSpeed: 120,
@@ -18,8 +20,9 @@ const TextAnimation = () => {
 
   return (
 
-        <h3 className="text-2xl py-2 md:text-3xl md:py-4 ">
-            {themeCtx?.theme === "Portuguese" ? "Eu sou " : "I' am "}
+        <h3 className="text-xl py-2 md:text-3xl md:py-4 ">
+            {themeCtx?.theme === "Portuguese" && "Eu sou "}
+            {themeCtx?.theme === "English" && "I' m "}
             <span 
                 className='
                     font-extrabold  

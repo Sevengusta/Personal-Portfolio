@@ -14,7 +14,7 @@ const Page = () => {
       <header className="bg-gray-800">
         <Header />
       </header>
-      <section className="bg-gray-600 pt-16 xl:pt-0">
+      <section className="bg-gray-600 pt-8 xl:pt-0">
         <Home />
       </section>
       <section className="bg-gray-800">

@@ -1,3 +1,4 @@
+'use client'
 import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
 
 const STORAGE_KEY = 'themeContextKey';
@@ -11,7 +12,7 @@ export const ThemeContext = createContext<ThemeContext | null>(null);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const storedTheme = typeof window !== 'undefined' ? localStorage.getItem(STORAGE_KEY) : null;
-  const defaultTheme = storedTheme || 'Portuguese';
+  const defaultTheme = storedTheme || 'English' || 'Portuguese' ;
   const [theme, setTheme] = useState(defaultTheme);
 
   useEffect(() => {

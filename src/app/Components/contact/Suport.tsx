@@ -8,41 +8,62 @@ import Button from "../comuns/Button";
 import MoneyImage from "./MoneyImage";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
-import { SendMailFormSchema } from "@/app/schemas/formSchema";
 import toast from "react-hot-toast";
-
+import { ThemeContext, useTheme } from "@/app/contexts/LanguageContexts";
+import {z} from 'zod'
 
 const Suport = () => {
+  const themeCtx = useTheme()
+  const SendMailFormSchema = z.object({
+      name: z
+        .string()
+        .trim()
+        .min(2, themeCtx?.theme === 'Portuguese' ? 'O nome precisa conter pelo menos 2 caracteres' : 'JAPA')
+        .max(20, 'O máximo de caracteres suportado pelo nome são 20')
+        ,
+      email: z
+        .string()
+        .email('Utilize um formato de email válido: exemplo@gmail.com')
+        ,
+      message: z
+        .string()
+        .trim()
+        .min(3, 'A mensagem precisa conter pelo menos 3 caracteres')
+        ,
+    })
+
+
+
+
+  
   const [isSubmitted, setSubmitted] = useState(false);
   const { register, handleSubmit, formState: {errors}} = useForm({
     resolver: zodResolver(SendMailFormSchema)
   })
   const form: RefObject<HTMLFormElement> | null = useRef(null);
-  function tostar ()  {
-    errors.name && toast((t) => (
-      <span className=" flex items-center">
-        {errors.name?.message as string}
-        <button onClick={() => toast.dismiss(t.id)}>
-          ❌
-        </button>
-      </span>
-    ))
-    errors.email && toast((t) => (
-      <span className=" flex items-center">
-        {errors.email?.message as string}
-        <button onClick={() => toast.dismiss(t.id)}>
-          ❌
-        </button>
-      </span>
-    ))
+  
+  function showToast(message : string) {
     toast((t) => (
-      <span className=" flex items-center">
-        {errors.message?.message as string ?? 'Pressione novamente para entender os erros' }
-        <button onClick={() => toast.dismiss(t.id)}>
-          ❌
-        </button>
+      <span className="flex items-center">
+        {message}
+        <button onClick={() => toast.dismiss(t.id)}>❌</button>
       </span>
-    ))
+    ));
+  }
+
+  const tostar = () => {
+    
+    if (errors.name) {
+      showToast(errors.name?.message as string);
+    }
+  
+    if (errors.email) {
+      showToast(errors.email?.message as string);
+    }
+  
+    if (errors.message) {
+      showToast(errors.message?.message as string );
+    }
   }
 
   function handleSendMailForm() {
@@ -60,9 +81,12 @@ const Suport = () => {
 
   const { ref, inView } = useInView({ threshold: 0.2 });
   const mainControls = useAnimation();
+
   useEffect(() => {
     inView ? mainControls.start("visible") : mainControls.start("hidden");
-  }, [mainControls, inView]);
+    
+  }, [mainControls, inView, tostar ]);
+
   return isSubmitted ? (
     <div ref={ref}>
       <motion.div
@@ -83,12 +107,19 @@ const Suport = () => {
             md:text-2xl
           "
         >
-          <Font>Sua mensagem foi enviada com sucesso</Font>
+          {themeCtx?.theme === "Portuguese" && <Font>Sua mensagem foi enviada com sucesso</Font>}
+          {themeCtx?.theme === "English" && <Font>Your message was sent succefully</Font>}
         </div>
         <MoneyImage />
+        {themeCtx?.theme === "Portuguese" &&
         <Button backForm={() => setSubmitted(false)}>
           Clique para enviar outra mensagem
-        </Button>
+        </Button>}
+
+        {themeCtx?.theme === "English" &&
+        <Button backForm={() => setSubmitted(false)}>
+          Click to send other message
+        </Button>}
       </motion.div>
     </div>
   ) : (
@@ -101,7 +132,9 @@ const Suport = () => {
             md:text-2xl
           "
       >
-        <Font>Fale comigo; responderei o mais rápido possível</Font>
+        {themeCtx?.theme === "Portuguese" && <Font>Fale comigo; responderei o mais rápido possível</Font>}
+        {themeCtx?.theme === "English" && <Font>Talk to me; I'll answer as soon as possible</Font>}
+        
       </div>
       <form
         ref={form}
@@ -153,7 +186,8 @@ const Suport = () => {
                 peer-focus:text-orange-500
                 peer-focus:text-sm
               ">
-                Nome
+                {themeCtx?.theme === "Portuguese" && 'Nome'}
+                {themeCtx?.theme === "English" && 'Name'}
             </label>
           </div>
         </div>
@@ -235,7 +269,10 @@ const Suport = () => {
                 resize-none
               "
               placeholder=""
-            ></textarea>
+            >
+
+            </textarea>
+
             <label className="
               pl-1
               absolute 
@@ -251,14 +288,19 @@ const Suport = () => {
               peer-focus:-top-6
               peer-focus:text-orange-500
               peer-focus:text-sm
-            ">Deixe sua mensagem</label>
+            ">
+              {themeCtx?.theme === "Portuguese" && 'Deixe uma mensagem'}
+              {themeCtx?.theme === "English" && 'Send a message'}
+              
+            </label>
           </div>
         </div>
-
-        <Button backForm={tostar} value="Send">Enviar</Button>
+        {themeCtx?.theme === "Portuguese" && <Button backForm={() => tostar()} value="Send">Enviar</Button>}
+        {themeCtx?.theme === "English" && <Button backForm={() => tostar()} value="Send">Send</Button>}
+        
       </form>
     </motion.div>
   );
 };
 
-export default Suport;
+export default Suport

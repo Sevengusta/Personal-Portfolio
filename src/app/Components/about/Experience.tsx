@@ -5,9 +5,11 @@ import { experiencesData } from "../data/experiencesData";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { LuGraduationCap } from "react-icons/lu";
+import { useTheme } from "@/app/contexts/LanguageContexts";
 
 
 const Experience = () => {
+  const themeCtx = useTheme();
 
   return (
     <div className="">
@@ -21,7 +23,9 @@ const Experience = () => {
 
           "
       >
-        <Font>Experiências</Font>
+        {themeCtx?.theme === 'Portuguese' && <Font>Experiências</Font>}
+        {themeCtx?.theme === 'English' && <Font>Experiences</Font>}
+        
       </h3>
       <VerticalTimeline >
         {
@@ -34,7 +38,9 @@ const Experience = () => {
                  boxShadow: 'none',
                  border: "1px solid rgba(0, 0, 0 ,0.05)",
                 }}
-              date={item.date}
+              date={themeCtx?.theme === 'Portuguese' ? item.date_PT : themeCtx?.theme === 'English' ? item.date_US : undefined}
+
+              
               icon={item.icon}
               iconStyle={{ 
                 background: 'rgb(75 85 99)',
@@ -51,11 +57,13 @@ const Experience = () => {
                   md:text-2xl
                 "
                 >
-                  <Font>{item.title}</Font>
+                  {themeCtx?.theme === 'Portuguese' && <Font>{item.title_PT}</Font>}
+                  {themeCtx?.theme === 'English' && <Font>{item.title_US}</Font>}
 
                 </h3>
                 <p className="font-normal !mt-1" >{item.location}</p>
-                <p className="!font-normal !mt-0" >{item.description}</p>
+                {themeCtx?.theme === 'Portuguese' && <p className="!font-normal !mt-0" >{item.description_PT}</p>}
+                {themeCtx?.theme === 'English' && <p className="!font-normal !mt-0" >{item.description_US}</p>}
               </VerticalTimelineElement>
 
             </React.Fragment>
