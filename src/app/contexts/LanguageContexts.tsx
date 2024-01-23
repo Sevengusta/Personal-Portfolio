@@ -12,7 +12,7 @@ export const ThemeContext = createContext<ThemeContext | null>(null);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const storedTheme = typeof window !== 'undefined' ? localStorage.getItem(STORAGE_KEY) : null;
-  const defaultTheme = storedTheme || 'English' || 'Portuguese' ;
+  const defaultTheme = storedTheme || 'English';
   const [theme, setTheme] = useState(defaultTheme);
 
   useEffect(() => {

@@ -101,12 +101,12 @@ const Suport = () => {
         <MoneyImage />
         {themeCtx?.theme === "Portuguese" &&
         <Button backForm={() => setSubmitted(false)}>
-          Clique para enviar outra mensagem
+          'Clique para enviar outra mensagem'
         </Button>}
 
         {themeCtx?.theme === "English" &&
         <Button backForm={() => setSubmitted(false)}>
-          Click to send other message
+          'Click to send other message'
         </Button>}
       </motion.div>
     </div>
