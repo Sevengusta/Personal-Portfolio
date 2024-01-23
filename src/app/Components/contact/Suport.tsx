@@ -1,4 +1,4 @@
-import React, { FormEvent } from "react";
+import React, { FormEvent, useCallback } from "react";
 import { Font } from "../comuns/Font";
 import { zodResolver} from '@hookform/resolvers/zod';
 import { useInView } from "react-intersection-observer";
@@ -32,7 +32,7 @@ const Suport = () => {
 
   
 
-  const tostar = () => {
+  const tostar = useCallback(() => {
     
     if (errors.name && themeCtx?.theme === 'Portuguese') {
       showToast(errors.name?.message as string);
@@ -52,7 +52,7 @@ const Suport = () => {
     } else if (errors.message && themeCtx?.theme === 'English') {
       showToast('The message must contain at least 3 characters')
     }
-  }
+  }, [errors, themeCtx])
 
   function handleSendMailForm() {
     setSubmitted(true);
