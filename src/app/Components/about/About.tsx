@@ -96,14 +96,13 @@ export const About = () => {
             >
             {themeCtx?.theme === 'Portuguese' && 
             'Minha especialidade é a criação de dashboards dinâmicos com a \
-            linguagem Python. Além disso, estou aprendendo todos os dias sobre \
-            Machine Learning e desenvolvendo sólidos conhecimentos sobre \
-            Estatística com a linguagem R.'
+            linguagem Python. Além disso, desenvolvo soluções web com o uso de \
+            Machine Learning com a implantação em ambientes de nuvem (AWS e GCP).'
             }
             {themeCtx?.theme === 'English' && 
             'My specialty is create dynamic dashboards with the Python language. \
-             Furthermore, I am learning every day about Machine Learning \
-            and developing solid knowledge about Statistics with the R language.'
+             Additionally, i develop web solutions using Machine Learning  \
+            with deployment in cloud environments (AWS and GCP),'
             }
             </p>
           </div>

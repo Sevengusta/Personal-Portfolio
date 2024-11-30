@@ -45,7 +45,7 @@ const LeftArea = () => {
           <>
             <h1 className=" text-3xl  md:text-5xl md:py-4">Welcome</h1>
             <p className=" text-sm  md:text-xl xl:text-xl  py-2">
-              I&rsquo;m Gustavo, I&rsquo;m 27 years old and I&rsquo;m studying{" "}
+              I&rsquo;m Gustavo, I&rsquo;m 28 years old and I&rsquo;m studying{" "}
               <Font> Computing  </Font>
               at Universidade Federal Fluminense. I currently use
               <Font> Python,</Font>to carry out projects related to data analysis,
@@ -64,7 +64,7 @@ const LeftArea = () => {
           <>
           <h1 className=" text-3xl  md:text-5xl md:py-4">Seja bem vindo</h1>
           <p className=" text-sm  md:text-xl xl:text-xl  py-2">
-            Eu sou o Gustavo, tenho 27 anos de idade e estou cursando{" "}
+            Eu sou o Gustavo, tenho 28 anos de idade e estou cursando{" "}
             <Font> Computação </Font>
             pela Universidade Federal Fluminense. Atualmente utilizo o
             <Font> Python,</Font>para realizar projetos relacionados a análise de
